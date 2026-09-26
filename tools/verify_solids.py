@@ -4,7 +4,7 @@ import json, math, sys, time
 ROOT=Path(__file__).resolve().parent.parent
 sys.path.insert(0,str(ROOT/'solid-runtime'))
 from OCP.gp import gp_Pnt, gp_Vec, gp_Dir, gp_Ax1, gp_Trsf
-from OCP.BRepPrimAPI import BRepPrimAPI_MakeBox, BRepPrimAPI_MakeCylinder, BRepPrimAPI_MakeCone, BRepPrimAPI_MakePrism, BRepPrimAPI_MakeRevol
+from OCP.BRepPrimAPI import BRepPrimAPI_MakeBox, BRepPrimAPI_MakeCylinder, BRepPrimAPI_MakeCone, BRepPrimAPI_MakePrism, BRepPrimAPI_MakeRevol, BRepPrimAPI_MakeSphere
 from OCP.BRepBuilderAPI import BRepBuilderAPI_MakePolygon, BRepBuilderAPI_MakeFace, BRepBuilderAPI_Transform
 from OCP.BRepAlgoAPI import BRepAlgoAPI_Fuse, BRepAlgoAPI_Cut
 from OCP.BRepGProp import BRepGProp
@@ -30,6 +30,7 @@ def combine(a,b,subtract=False):
 def construct(n):
     kind=n['type']
     if kind=='box':s=BRepPrimAPI_MakeBox(*n['size']).Shape()
+    elif kind=='sphere':s=BRepPrimAPI_MakeSphere(n['r']).Shape()
     elif kind=='cylinder':
         s=(BRepPrimAPI_MakeCylinder(n['r'],n['h']) if n['r']==n['r2'] else BRepPrimAPI_MakeCone(n['r'],n['r2'],n['h'])).Shape()
     elif kind in ('prism','revolve'):

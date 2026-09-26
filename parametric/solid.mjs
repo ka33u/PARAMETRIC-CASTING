@@ -9,6 +9,7 @@ export function evaluateDesign(wasm,state,{segments=256,includeParts=true,includ
   switch(n.type){
    case 'box':out=keep(M.cube(n.size));break;
    case 'cylinder':out=keep(M.cylinder(n.h,n.r,n.r2,segments));break;
+   case 'sphere':out=keep(M.sphere(n.r,segments));break;
    case 'prism':out=keep(M.extrude([n.points],n.h));break;
    case 'revolve':out=keep(M.revolve([n.points],segments));break;
    case 'union':return combine(n.children.map(evalNode));
@@ -47,7 +48,9 @@ export function evaluateDesign(wasm,state,{segments=256,includeParts=true,includ
    parts.push({id:design.groups[i].id,label:design.groups[i].label,keys:design.groups[i].keys,volume:Math.max(0,partVolume),mesh:includeMesh&&partVolume>1e-8?mesh(net):null});
   }
   if(includeParts&&Math.abs(parts.reduce((a,p)=>a+p.volume,0)-volume)>Math.max(.01,volume*1e-6))throw Error('分项与整体体积校验不一致，请重试。');
-  return {volume,water,mesh:includeMesh?mesh(solid):null,parts,bounds:solid.boundingBox(),triangles:solid.numTri(),components:materialComponents,details:design.details,warnings:design.warnings,label:design.label,segments,
+  const tools=includeMesh?(design.toolGroups||[]).map((g,i)=>({id:g.id,label:g.label,mesh:mesh(cutters[i])})):[];
+  const warnings=[...design.warnings];if(design.state.family==='custom'&&cutters.length&&before.volume()-volume<1e-7)warnings.push('减料体与材料没有有效相交，当前重量未因减料改变；可显示减料体检查位置。');
+  return {volume,water,tools,mesh:includeMesh?mesh(solid):null,parts,bounds:solid.boundingBox(),triangles:solid.numTri(),components:materialComponents,details:design.details,warnings,label:design.label,segments,
    removed:before.volume()-volume,state:design.state};
  }finally{for(const obj of [...alive].reverse())obj.delete();}
 }

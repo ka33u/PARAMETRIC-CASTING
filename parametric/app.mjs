@@ -1,3 +1,5 @@
+import {CustomEditor} from './custom-editor.mjs';
+import {customRows} from './custom.mjs';
 import {FAMILIES,getFamily,fresh,normalize,buildDesign,primaryFields,activeOptions,clone} from './catalog.mjs';
 import {SolidViewer} from './viewer.mjs';
 import {stlBinary} from './solid.mjs';
@@ -12,21 +14,26 @@ try {const list=JSON.parse(localStorage.getItem(STORAGE)||'[]');saved=Array.isAr
 function notice(message){$('status').textContent=message;}
 function writeStorage(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true;}catch{storageAvailable=false;notice('当前浏览器无法保存本机数据，请导出参数方案备份。');return false;}}
 function remember(){drafts[state.family]=clone(state);if(writeStorage(DRAFT,{state,drafts})&&storageAvailable)notice('当前草稿已保存在此浏览器。原图和尺寸均在本机处理。');}
+const customEditor=new CustomEditor($('custom-editor'),options=>requestBuild(options),id=>viewer?.setHighlight(id));
 const paths={
  endcap:'M5 22 15 9h28l12 13v14L42 44H18L5 36Zm0 0 14 8h22l14-8M19 30v14m22-14v14M15 9l4 21m24-21-2 21 M25 22c0-5 11-5 11 0s-11 5-11 0',
  motor:'M10 17 38 5l17 12v21L28 49 10 37Zm0 0 18 12 27-12M28 29v20 M15 15l18 12m-12-15 18 12m-12-15 18 12m-12-15 18 12M7 34l-4 7 12 6 8-3m15-3 5 4 16-7-4-5',
  bearing:'M7 29c0-12 48-12 48 0v9c0 12-48 12-48 0Zm0 0c0 12 48 12 48 0M17 26V14c0-10 28-10 28 0v12c0 9-28 9-28 0M17 14c0 10 28 10 28 0M25 14c0-5 12-5 12 0s-12 5-12 0',
+ custom:'M7 15 23 7l15 8v20l-16 9L7 35Zm0 0 15 9 16-9M22 24v20M35 29l11-6 12 6v15l-12 7-11-7m11-7v14m-11-22 11 8 12-8',
  ring:'M7 18c0-15 48-15 48 0v22c0 14-48 14-48 0Zm0 0c0 15 48 15 48 0M18 18c0-8 26-8 26 0s-26 8-26 0M18 18v8m26-8v8',
  box:'M5 16 32 4l24 14v25L28 53 5 39Zm0 0 23 14 28-12M28 30v23M13 18l19-9 16 10-20 8Zm0 0v11l15 9 20-8V19',
  watercool:'M7 18c0-12 32-12 32 0v26c0 12-32 12-32 0Zm0 0c0 12 32 12 32 0M12 18c0-8 22-8 22 0s-22 8-22 0M17 18c0-4 12-4 12 0s-12 4-12 0M39 14l14-6v26l-14 9M20 7V2h7v5M45 13V4h7v8M39 23l14-6m-14 15 14-6'
 };
 function drawFamilies(){ $('families').innerHTML=Object.entries(FAMILIES).map(([id,f])=>`<button class="family-card ${id===state.family?'active':''}" data-family="${id}" aria-pressed="${id===state.family}"><svg viewBox="0 0 62 58" aria-hidden="true"><path d="${paths[id]}" stroke-linejoin="round"/></svg><span><strong>${f.name}</strong><small>${f.subtitle}</small></span></button>`).join('');}
 function renderEditor(){
- const f=getFamily(state.family),fields=primaryFields(state);drawFamilies();$('family-title').textContent=f.name;$('field-count').textContent=fields.length+' 个主尺寸';
+ const f=getFamily(state.family),fields=primaryFields(state);drawFamilies();$('family-title').textContent=f.name;$('field-count').textContent=state.family==='custom'?'自由组合':fields.length+' 个主尺寸';
+ $('fields').hidden=state.family==='custom';$('variants').hidden=state.family==='custom';$('custom-editor').hidden=state.family!=='custom';$('details').hidden=state.family==='custom';if(state.family==='custom')customEditor.render(state);
+ $('cut-view').hidden=state.family!=='custom';
  $('variants').innerHTML=f.variants.map(([id,label])=>`<button data-variant="${id}" class="${id===state.variant?'active':''}" aria-pressed="${id===state.variant}">${label}</button>`).join('');
  $('fields').innerHTML=fields.map(x=>`<div class="field" data-field="${x.key}"><div class="field-top"><label for="p-${x.key}">${x.label}</label><span class="origin ${state.edited.includes(x.key)?'edited':''}">${state.edited.includes(x.key)?'已填写':'模板值'}</span></div><div class="number-wrap"><input id="p-${x.key}" data-primary="${x.key}" type="number" min="${x.min}" max="${x.max}" step="any" value="${state.values[x.key]??''}"><span>mm</span></div></div>`).join('');
  $('features').innerHTML='<h3>结构选项</h3>'+activeOptions(state).map(([key,label,choices])=>`<div class="feature"><span class="feature-label">${label}</span><div class="feature-options" role="group" aria-label="${label}">${choices.map(([v,text],i)=>`<button data-feature="${key}" data-choice="${i}" class="${state.features[key]===v?'active':''}" aria-pressed="${state.features[key]===v}">${text}</button>`).join('')}</div></div>${state.family==='watercool'&&key==='flange'&&state.features.flange?'<div class="flange-controls"><div id="flange-fields" class="flange-grid"></div><p>沿轴向分别设置，均包含在机座总长内。A / B 端见三维标记；封水环厚度在细节中另设。</p></div>':''}`).join('');
  $('features').hidden=!activeOptions(state).length;
+ if(state.family==='endcap'&&state.variant==='b5')$('features').insertAdjacentHTML('afterbegin','<div class="b5-flange-controls"><h3>B5 安装法兰</h3><div id="b5-flange-fields" class="flange-grid"></div><p class="custom-help">安装法兰在盖底侧；厚度与定位止口均包含在总深度内。</p></div>');
  $('quantity').value=state.quantity;$('density').value=state.density;$('basis').value=state.basis;
  updateBasis();selected=null;viewer?.setHighlight(null);
  $('water-view').hidden=state.family!=='watercool';
@@ -34,9 +41,10 @@ function renderEditor(){
 }
 function updateBasis(){$('basis-badge').textContent=state.basis==='毛坯尺寸'?'毛坯':'加工后';$('density-label').textContent='灰铸铁 · '+state.density;$('model-label').textContent=state.name;}
 function renderDetails(details){
+ if(state.family==='custom'){$('preset-notice').textContent='组合尺寸、位置和阵列均按左侧输入计算。可点击实体或构件列表继续编辑。';return;}
  const active=document.activeElement?.dataset.detail;
- const quickKeys=state.family==='watercool'&&state.features.flange?['flangeAWidth','flangeBWidth']:[],advanced=details.filter(x=>!quickKeys.includes(x.key));
- for(const [container,list] of [[$('detail-fields'),advanced],[$('flange-fields'),details.filter(x=>quickKeys.includes(x.key))]]){
+ const quickKeys=state.family==='watercool'&&state.features.flange?['flangeAWidth','flangeBWidth']:state.family==='endcap'&&state.variant==='b5'?['mountFlangeD','mountFlangeT']:[],advanced=details.filter(x=>!quickKeys.includes(x.key));
+ for(const [container,list] of [[$('detail-fields'),advanced],[$('flange-fields')||$('b5-flange-fields'),details.filter(x=>quickKeys.includes(x.key))]]){
   if(!container)continue;
   if(container.dataset.keys!==list.map(x=>x.key).join('|')){
    container.innerHTML=list.map(x=>`<div class="detail-field" data-field="${x.key}"><label for="d-${x.key}">${esc(x.label)}</label><div class="number-wrap"><input id="d-${x.key}" data-detail="${x.key}" type="number" step="${x.unit==='个'?1:'any'}"><span>${x.unit}</span></div><button type="button" data-restore="${x.key}"></button></div>`).join('');
@@ -66,7 +74,7 @@ function renderResult(r){
  $('caption').textContent=!viewer?'此浏览器无法显示三维，请启用硬件加速或更换支持 WebGL 的浏览器。':viewer.showWater?'蓝色为水套空腔，不计入铸件重量；透明部分为铸件。':viewer.section?'剖切仅用于查看内部，重量和导出仍为完整模型。':'点击三维部位或右侧重量分布，可定位关联尺寸。相交材料只计一次。';
  $('model-label').textContent=r.label+' · '+state.basis;$('save').disabled=false;$('export').disabled=false;renderDetails(r.details);viewer?.update(r,{fit:fitNext});syncViewButtons();fitNext=false;remember();
 }
-function selectPart(id){if(!result)return;const part=result.parts.find(p=>p.id===id);if(!part)return;selected=id;viewer?.setHighlight(id);document.querySelectorAll('[data-part]').forEach(el=>el.classList.toggle('selected',el.dataset.part===id));document.querySelectorAll('[data-field]').forEach(el=>el.classList.toggle('selected',part.keys.includes(el.dataset.field)));$('caption').textContent=`已选：${part.label} · ${fmt(MASS(part.volume))} kg。高亮尺寸可调整此部位；相交体积已去重。`;const keys=part.keys.filter(k=>$('p-'+k)||$('d-'+k));const detail=keys.find(k=>$('d-'+k)?.closest('#details'));if(detail)$('details').open=true;}
+function selectPart(id){if(!result)return;if(state.family==='custom'){customEditor.select(id);selected=id;const c=state.components.find(x=>x.id===id);$('caption').textContent=c?('已选：'+c.name+'。在左侧调整尺寸、位置或材料操作。'):'';return;}const part=result.parts.find(p=>p.id===id);if(!part)return;selected=id;viewer?.setHighlight(id);document.querySelectorAll('[data-part]').forEach(el=>el.classList.toggle('selected',el.dataset.part===id));document.querySelectorAll('[data-field]').forEach(el=>el.classList.toggle('selected',part.keys.includes(el.dataset.field)));$('caption').textContent=`已选：${part.label} · ${fmt(MASS(part.volume))} kg。高亮尺寸可调整此部位；相交体积已去重。`;const keys=part.keys.filter(k=>$('p-'+k)||$('d-'+k));const detail=keys.find(k=>$('d-'+k)?.closest('#details'));if(detail)$('details').open=true;}
 function focusDimension(key){const el=$('p-'+key)||$('d-'+key);if(!el)return;if(el.closest('#details'))$('details').open=true;el.focus();el.select();el.scrollIntoView({block:'nearest',behavior:'smooth'});}
 function loadState(value){const next=normalize(value);buildDesign(next);state=next;renderEditor();requestBuild({fit:true});}
 $('families').onclick=e=>{const b=e.target.closest('[data-family]');if(!b||b.dataset.family===state.family)return;try{buildDesign(state);drafts[state.family]=clone(state);}catch{}const id=b.dataset.family;try{loadState(drafts[id]||fresh(id));}catch{loadState(fresh(id));}};
@@ -82,7 +90,8 @@ for(const id of ['density','quantity'])$(id).oninput=e=>{state[id]=e.target.valu
 $('basis').onchange=e=>{state.basis=e.target.value;requestBuild();};
 $('parts').onclick=e=>{const b=e.target.closest('[data-part]');if(b)selectPart(b.dataset.part);};
 $('section').onclick=()=>{if(!viewer)return;viewer.setSection(!viewer.section);$('section').classList.toggle('active',viewer.section);$('section').setAttribute('aria-pressed',viewer.section);$('caption').textContent=viewer.showWater?'蓝色为水套空腔，不计入铸件重量；透明部分为铸件。':viewer.section?'剖切仅用于查看内部，重量和导出仍为完整模型。':'完整实体 · 点击部位可定位关联尺寸。';};
-function syncViewButtons(){for(const [id,on] of [['section',!!viewer?.section],['water-view',!!viewer?.showWater]]){$(id).classList.toggle('active',on);$(id).setAttribute('aria-pressed',String(on));}}
+function syncViewButtons(){for(const [id,on] of [['section',!!viewer?.section],['water-view',!!viewer?.showWater],['cut-view',!!viewer?.showTools]]){$(id).classList.toggle('active',on);$(id).setAttribute('aria-pressed',String(on));}}
+$('cut-view').onclick=()=>{if(!viewer)return;viewer.setTools(!viewer.showTools);syncViewButtons();$('caption').textContent=viewer.showTools?'红色为减料体，显示仅用于定位；重量与 STL 均为扣除后的铸件。':'点击材料或构件列表可调整尺寸与位置。';};
 $('water-view').onclick=()=>{if(!result?.water||!viewer)return;viewer.setWater(!viewer.showWater);syncViewButtons();$('caption').textContent=viewer.showWater?'蓝色显示水套空腔，灰色透明显示铸件；水不计重，导出仍为完整铸件实体。':'水套空腔已扣重。可用剖切核对内外筒、封水环和隔水筋。';};
 $('reset-view').onclick=()=>viewer?.reset();
 for(const b of document.querySelectorAll('[data-close]'))b.onclick=()=>b.closest('dialog').close();
@@ -97,7 +106,7 @@ function download(contents,ext,type){const blob=new Blob([contents],{type}),url=
 $('export').onclick=()=>{if(result)$('export-dialog').showModal();};
 $('export-json').onclick=()=>{if(result)download(JSON.stringify(state,null,2),'json','application/json');};
 $('export-stl').onclick=()=>{if(result)download(stlBinary(result.mesh),'stl','model/stl');};
-$('export-report').onclick=()=>{if(!result)return;const r=result,rows=[...primaryFields(state).map(x=>[x.label,state.values[x.key]+' mm',state.edited.includes(x.key)?'手动填写':'模板默认']),...r.details.map(x=>[x.label,x.value+' '+x.unit,x.overridden?'单独设置':'模板比例联动'])];download(`<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(state.name)} · 重量清单</title><style>body{font:14px/1.7 system-ui;max-width:860px;margin:40px auto;padding:20px;color:#253f38}h1{font-size:24px}table{border-collapse:collapse;width:100%;margin:20px 0}td,th{padding:9px;text-align:left;border-bottom:1px solid #d9dfd8}small{color:#6d7e73}b{font-size:23px} @media print{body{margin:0}}</style><h1>${esc(state.name)}</h1><p>${esc(r.label)} · ${esc(state.basis)} · 灰铸铁 ${state.density} g/cm³</p><b>单件 ${fmt(MASS(r.volume))} kg</b><p>${state.quantity} 件合计 ${fmt(MASS(r.volume)*state.quantity)} kg · 体积 ${fmt(r.volume/1000,3)} cm³</p>${r.water?`<p>水套净容积 ${fmt(r.water.volume/1e6)} L · 水套净厚 ${fmt(r.water.gap,2)} mm · 有效长 ${fmt(r.water.length,2)} mm（不含接管，水不计重）</p>`:''}<p>结构：${activeOptions(state).map(([k,l,choices])=>esc(l)+' '+esc(choices.find(x=>x[0]===state.features[k])?.[1]||'')).join(' / ')}</p><table><thead><tr><th>结构</th><th>净体积 cm³</th><th>重量 kg</th></tr></thead><tbody>${r.parts.map(p=>`<tr><td>${esc(p.label)}</td><td>${fmt(p.volume/1000,3)}</td><td>${fmt(MASS(p.volume))}</td></tr>`).join('')}</tbody></table><table><thead><tr><th>尺寸</th><th>数值</th><th>来源</th></tr></thead><tbody>${rows.map(row=>'<tr>'+row.map(v=>'<td>'+esc(v)+'</td>').join('')+'</tr>').join('')}</tbody></table><p>提示：${esc(r.warnings.join(' '))}</p><small>计算依据：完整实体并集、孔洞交集扣除；分项按材料归属去重。通用模板不代表原图全部细节，不含未建出的圆角、拔模斜度及浇冒口。几何计算校验不等于实物称重验证。生成于 ${esc(new Date().toLocaleString('zh-CN'))}。</small></html>`,'html','text/html;charset=utf-8');};
+$('export-report').onclick=()=>{if(!result)return;const r=result,rows=[...(state.family==='custom'?customRows(state):[]),...primaryFields(state).map(x=>[x.label,state.values[x.key]+' mm',state.edited.includes(x.key)?'手动填写':'模板默认']),...r.details.map(x=>[x.label,x.value+' '+x.unit,x.overridden?'单独设置':'模板比例联动'])];download(`<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${esc(state.name)} · 重量清单</title><style>body{font:14px/1.7 system-ui;max-width:860px;margin:40px auto;padding:20px;color:#253f38}h1{font-size:24px}table{border-collapse:collapse;width:100%;margin:20px 0}td,th{padding:9px;text-align:left;border-bottom:1px solid #d9dfd8}small{color:#6d7e73}b{font-size:23px} @media print{body{margin:0}}</style><h1>${esc(state.name)}</h1><p>${esc(r.label)} · ${esc(state.basis)} · 灰铸铁 ${state.density} g/cm³</p><b>单件 ${fmt(MASS(r.volume))} kg</b><p>${state.quantity} 件合计 ${fmt(MASS(r.volume)*state.quantity)} kg · 体积 ${fmt(r.volume/1000,3)} cm³</p>${r.water?`<p>水套净容积 ${fmt(r.water.volume/1e6)} L · 水套净厚 ${fmt(r.water.gap,2)} mm · 有效长 ${fmt(r.water.length,2)} mm（不含接管，水不计重）</p>`:''}<p>结构：${activeOptions(state).map(([k,l,choices])=>esc(l)+' '+esc(choices.find(x=>x[0]===state.features[k])?.[1]||'')).join(' / ')}</p><table><thead><tr><th>结构</th><th>净体积 cm³</th><th>重量 kg</th></tr></thead><tbody>${r.parts.map(p=>`<tr><td>${esc(p.label)}</td><td>${fmt(p.volume/1000,3)}</td><td>${fmt(MASS(p.volume))}</td></tr>`).join('')}</tbody></table><table><thead><tr><th>尺寸</th><th>数值</th><th>来源</th></tr></thead><tbody>${rows.map(row=>'<tr>'+row.map(v=>'<td>'+esc(v)+'</td>').join('')+'</tr>').join('')}</tbody></table><p>提示：${esc(r.warnings.join(' '))}</p><small>计算依据：完整实体并集、孔洞交集扣除；分项按材料归属去重。通用模板不代表原图全部细节，不含未建出的圆角、拔模斜度及浇冒口。几何计算校验不等于实物称重验证。生成于 ${esc(new Date().toLocaleString('zh-CN'))}。</small></html>`,'html','text/html;charset=utf-8');};
 renderEditor();
 try{viewer=new SolidViewer($('viewer'),selectPart,focusDimension);if(state.family==='watercool'){viewer.setSection(true);syncViewButtons();}}catch(e){$('caption').textContent='此浏览器无法创建三维视图；重量仍可计算。请启用硬件加速或换用支持 WebGL 的浏览器。';notice('三维视图初始化失败：'+e.message);}
 try{

@@ -1,0 +1,205 @@
+[
+  {
+    "name": "b3-bowl",
+    "family": "endcap",
+    "occt_mm3": 372352.1045994645,
+    "manifold_mm3": 372317.0478791635,
+    "relative_error": 9.414938137302917e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.149
+  },
+  {
+    "name": "b3-cone",
+    "family": "endcap",
+    "occt_mm3": 311573.7683422038,
+    "manifold_mm3": 311544.9517927926,
+    "relative_error": 9.248708440554185e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.176,
+    "step": "b3-cone.step"
+  },
+  {
+    "name": "b3-flat",
+    "family": "endcap",
+    "occt_mm3": 324749.0540283843,
+    "manifold_mm3": 324721.6127615047,
+    "relative_error": 8.449991320731392e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.094
+  },
+  {
+    "name": "b5-bowl",
+    "family": "endcap",
+    "occt_mm3": 652040.8038562874,
+    "manifold_mm3": 651977.4722290343,
+    "relative_error": 9.712831908454048e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.177
+  },
+  {
+    "name": "b5-cone",
+    "family": "endcap",
+    "occt_mm3": 642710.6594521219,
+    "manifold_mm3": 642648.4784434735,
+    "relative_error": 9.674805876330525e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.262,
+    "step": "b5-cone.step"
+  },
+  {
+    "name": "b5-flat",
+    "family": "endcap",
+    "occt_mm3": 600489.7327658942,
+    "manifold_mm3": 600433.6358505159,
+    "relative_error": 9.341860870767814e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.144
+  },
+  {
+    "name": "custom-cylinder",
+    "family": "custom",
+    "occt_mm3": 314159.26535897935,
+    "manifold_mm3": 314127.7250932773,
+    "relative_error": 0.0001003957838582937,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.0
+  },
+  {
+    "name": "custom-tube",
+    "family": "custom",
+    "occt_mm3": 379347.3129209676,
+    "manifold_mm3": 379309.22805013234,
+    "relative_error": 0.0001003957838583052,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.003
+  },
+  {
+    "name": "custom-box",
+    "family": "custom",
+    "occt_mm3": 140000.0,
+    "manifold_mm3": 140000,
+    "relative_error": 0.0,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.0
+  },
+  {
+    "name": "custom-cone",
+    "family": "custom",
+    "occt_mm3": 274889.3571891069,
+    "manifold_mm3": 274861.75945661764,
+    "relative_error": 0.00010039578385802903,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.0
+  },
+  {
+    "name": "custom-conetube",
+    "family": "custom",
+    "occt_mm3": 240331.8379996192,
+    "manifold_mm3": 240307.70969635714,
+    "relative_error": 0.00010039578385820892,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.0
+  },
+  {
+    "name": "custom-wedge",
+    "family": "custom",
+    "occt_mm3": 14000.000000000002,
+    "manifold_mm3": 14000,
+    "relative_error": 1.2992781453898973e-16,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.0
+  },
+  {
+    "name": "custom-sphere",
+    "family": "custom",
+    "occt_mm3": 268082.5731063291,
+    "manifold_mm3": 267987.62696856214,
+    "relative_error": 0.0003541675114005921,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.0
+  },
+  {
+    "name": "custom-torus",
+    "family": "custom",
+    "occt_mm3": 63140.10427218042,
+    "manifold_mm3": 63133.76527055156,
+    "relative_error": 0.00010039580551744934,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.011
+  },
+  {
+    "name": "custom-capsule",
+    "family": "custom",
+    "occt_mm3": 73132.74122871837,
+    "manifold_mm3": 73130.21800746219,
+    "relative_error": 3.450193735102954e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.015
+  },
+  {
+    "name": "custom-regular",
+    "family": "custom",
+    "occt_mm3": 103923.04845413266,
+    "manifold_mm3": 103923.04844409227,
+    "relative_error": 9.661364922861831e-11,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.001
+  },
+  {
+    "name": "custom-extrude",
+    "family": "custom",
+    "occt_mm3": 157500.0,
+    "manifold_mm3": 157500,
+    "relative_error": 0.0,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.001
+  },
+  {
+    "name": "custom-revolve",
+    "family": "custom",
+    "occt_mm3": 315013.7785607557,
+    "manifold_mm3": 314982.15250553103,
+    "relative_error": 0.00010039578385801492,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.0
+  },
+  {
+    "name": "custom-plate-ring-holes",
+    "family": "custom",
+    "occt_mm3": 684346.9605520567,
+    "manifold_mm3": 684310.7832364909,
+    "relative_error": 5.286399684828516e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.021,
+    "step": "custom-plate-ring-holes.step"
+  },
+  {
+    "name": "custom-plate-ribs-holes",
+    "family": "custom",
+    "occt_mm3": 685707.7631455394,
+    "manifold_mm3": 685673.6229657402,
+    "relative_error": 4.978823579694755e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.051
+  }
+]

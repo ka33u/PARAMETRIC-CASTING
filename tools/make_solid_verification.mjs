@@ -6,6 +6,7 @@ const wasm=await Module();wasm.setup();const cases=[];
 function record(name,state,exportStep=false){const d=buildDesign(state),r=evaluateDesign(wasm,state,{includeMesh:false,includeParts:false});cases.push({name,family:state.family,state,tree:d.tree,manifold_volume:r.volume,export:exportStep});}
 for(const [family,f] of Object.entries(FAMILIES))for(const [variant] of f.variants)record(family+'-'+variant,fresh(family,variant),['endcap-bowl','motor-axial','box-rounded','bracket-bracket'].includes(family+'-'+variant));
 for(const [family,f] of Object.entries(FAMILIES)){
+ if(family==='custom')continue; // Component transforms and dimensions have a dedicated verification generator.
  const state=fresh(family,family==='ring'?'flange':family==='bracket'?'bracket':undefined);
  for(const option of f.options)state.features[option[0]]=option[2].at(-1)[0];
  record(family+'-all-features',state);

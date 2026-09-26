@@ -1,18 +1,19 @@
+import {cube,cyl,union,cut,transform,prism,revolve} from './geometry.mjs';
+export {cube,cyl,union,cut,transform,prism,revolve} from './geometry.mjs';
+import {newComponent,normalizeComponents,buildCustom} from './custom.mjs';
 /* Template relationships are explicit estimates, not claims about Y2/YE4 drawings. */
 const field=(key,label,value,min=0.5,max=5000)=>({key,label,value,min,max,step:1,unit:'mm'});
 export const FAMILIES={
- endcap:{name:'端盖',subtitle:'碗形 · 锥形 · 平盘',icon:'endcap',variants:[['bowl','碗形端盖'],['cone','锥形端盖'],['flat','平盘端盖']],
+ endcap:{name:'端盖',subtitle:'B3 普通 · B5 法兰',icon:'endcap',variants:[['b3','B3 普通端盖'],['b5','B5 法兰端盖']],legacyVariants:[['bowl','旧版碗形端盖'],['cone','旧版锥形端盖'],['flat','旧版平盘端盖']],
   fields:[field('D','主体外径',180,20),field('H','总深度',50,3),field('t','壁厚',6),field('bore','中心孔径',52,0),field('hubD','轴承座外径',85,5)],
-  options:[['ears','安装耳',[[0,'无'],[3,'三耳'],[4,'四耳']],3],['ribs','加强筋',[[0,'无'],[3,'三筋'],[6,'六筋']],3],['flange','安装法兰',[[false,'无'],[true,'有']],false],['holes','耳部铸出孔',[[false,'无'],[true,'有']],false]]},
+  options:[['shell','壳体轮廓',[['bowl','圆筒壳'],['cone','收口壳'],['flat','平盘']],'cone'],['pilot','法兰定位止口',[[false,'无'],[true,'有']],false],['flangeHoles','法兰铸出孔',[[false,'无'],[true,'有']],false],['ears','安装耳',[[0,'无'],[3,'三耳'],[4,'四耳']],3],['ribs','加强筋',[[0,'无'],[3,'三筋'],[6,'六筋']],3],['flange','安装法兰',[[false,'无'],[true,'有']],false],['holes','耳部铸出孔',[[false,'无'],[true,'有']],false]]},
  motor:{name:'电机机座',subtitle:'散热筋 · 双底脚 · 接线座',icon:'motor',variants:[['axial','轴向散热筋'],['rings','环形散热筋'],['plain','光筒机座']],
   fields:[field('D','筒体外径（不含筋）',220,30),field('L','筒体长度',220,10),field('t','筒壁厚度',8),field('finH','散热筋高度',20,0)],
   options:[['feet','安装底脚',[[false,'无'],[true,'双底脚']],true],['terminal','接线座',[[false,'无'],[true,'有']],false],['flange','端部加强圈',[[false,'无'],[true,'两端']],true],['holes','底脚铸出孔',[[false,'无'],[true,'有']],false]]},
  bearing:{name:'轴承盖',subtitle:'内盖 · 外盖 · 阶梯盖',icon:'bearing',variants:[['inner','内盖'],['outer','外盖'],['stepped','阶梯盖']],
   fields:[field('D','端盘外径',115,15),field('bore','中心孔径',45,0),field('H','总高度',24,2),field('t','端盘厚度',6)],
   options:[['groove','环形油槽',[[false,'无'],[true,'有']],false],['holes','法兰铸出孔',[[false,'无'],[true,'四孔']],false]]},
- ring:{name:'法兰与环件',subtitle:'圆环 · 凸台法兰 · 锥套',icon:'ring',variants:[['ring','圆柱 / 圆环'],['flange','凸台法兰'],['cone','锥形套筒']],
-  fields:[field('D','主体外径',150,5),field('bore','内径（实心填 0）',80,0),field('H','总高度',30,1)],
-  options:[['holes','法兰铸出孔',[[false,'无'],[true,'四孔']],false]]},
+ custom:{name:'自定义组合',subtitle:'自由搭建 · 添加 · 减料',icon:'custom',variants:[['assembly','自由组合']],fields:[],options:[]},
  box:{name:'接线盒与盒盖',subtitle:'方盒 · 圆角盒 · 平盖',icon:'box',variants:[['box','方形盒体'],['rounded','圆角盒体'],['lid','盒盖']],
   fields:[field('L','外长',120,10),field('W','外宽',90,10),field('H','外高',55,1),field('t','壁厚 / 盖厚',5)],
   options:[['lugs','安装耳',[[0,'无'],[2,'双耳'],[4,'四耳']],2],['bottom','盒体底板',[[false,'无'],[true,'有']],true],['holes','耳部铸出孔',[[false,'无'],[true,'有']],false]]},
@@ -21,27 +22,30 @@ export const FAMILIES={
   options:[['feet','安装底脚',[[false,'无'],[true,'双底脚']],true],['flange','端部法兰',[[false,'无'],[true,'两端']],false],['ports','进出水口',[[0,'无'],[1,'实心管座'],[2,'铸出水孔']],1],['holes','底脚铸出孔',[[false,'无'],[true,'有']],false]]}
 
 };
-const LEGACY_FAMILIES={bracket:{name:'底脚与支架',subtitle:'平底脚 · 三角撑 · 平衡块',icon:'bracket',variants:[['foot','平底脚'],['bracket','带筋支架'],['weight','平衡块']],
+const LEGACY_FAMILIES={ring:{name:'法兰与环件',subtitle:'圆环 · 凸台法兰 · 锥套',icon:'ring',variants:[['ring','圆柱 / 圆环'],['flange','凸台法兰'],['cone','锥形套筒']],
+  fields:[field('D','主体外径',150,5),field('bore','内径（实心填 0）',80,0),field('H','总高度',30,1)],
+  options:[['holes','法兰铸出孔',[[false,'无'],[true,'四孔']],false]]},bracket:{name:'底脚与支架',subtitle:'平底脚 · 三角撑 · 平衡块',icon:'bracket',variants:[['foot','平底脚'],['bracket','带筋支架'],['weight','平衡块']],
   fields:[field('L','长度',100,5),field('W','宽度',55,5),field('H','高度',40,1),field('t','板厚',8)],
   options:[['ribs','加强筋',[[1,'单筋'],[2,'双筋']],2],['holes','底板铸出孔',[[false,'无'],[true,'双孔']],false]]}};
 export const getFamily=id=>FAMILIES[id]||LEGACY_FAMILIES[id];
 export const clone=x=>JSON.parse(JSON.stringify(x));
 export function fresh(family='endcap',variant){
  const f=getFamily(family);if(!f)throw Error('未知零件类别。');
- return {format:'casting-parametric',version:1,family,variant:variant||f.variants[0][0],name:f.name,values:Object.fromEntries(f.fields.map(x=>[x.key,x.value])),features:Object.fromEntries(f.options.map(x=>[x[0],x[3]])),overrides:{},edited:[],density:7.2,quantity:1,basis:'毛坯尺寸'};
+ return {format:'casting-parametric',version:1,...(family==='custom'?{components:[newComponent()]}:{}),family,variant:variant||f.variants[0][0],name:f.name,values:Object.fromEntries(f.fields.map(x=>[x.key,x.value])),features:Object.fromEntries(f.options.map(x=>[x[0],x[3]])),overrides:{},edited:[],density:7.2,quantity:1,basis:'毛坯尺寸'};
 }
 export function primaryFields(state){
  const list=getFamily(state.family).fields;
  return list.filter(x=>!(state.family==='motor'&&state.variant==='plain'&&x.key==='finH')&&!(state.family==='box'&&state.variant==='lid'&&x.key==='H')&&!(state.family==='bracket'&&state.variant==='foot'&&x.key==='H')&&!(state.family==='bracket'&&state.variant==='weight'&&x.key==='t'));
 }
 export function activeOptions(s){return getFamily(s.family).options.filter(x=>
+ !(s.family==='endcap'&&(['b3','b5'].includes(s.variant)?(x[0]==='flange'||s.variant==='b3'&&['pilot','flangeHoles'].includes(x[0])):['shell','pilot','flangeHoles'].includes(x[0])))&&
  !(s.family==='box'&&s.variant==='lid'&&x[0]==='bottom')&&!(s.family==='bracket'&&s.variant!=='bracket'&&x[0]==='ribs')&&!(s.family==='ring'&&s.variant!=='flange'&&x[0]==='holes')&&
  !(x[0]==='holes'&&((['motor','watercool'].includes(s.family)&&!s.features.feet)||(s.family==='endcap'&&!s.features.ears)||(s.family==='box'&&!s.features.lugs))));
 }
 export function normalize(input){
  if(!input||input.format!=='casting-parametric'||input.version!==1||!getFamily(input.family))throw Error('不是支持的参数化计算方案。');
- const f=getFamily(input.family);if(!f.variants.some(v=>v[0]===input.variant))throw Error('零件款式无效。');
- const s=fresh(input.family,input.variant);s.name=String(input.name||f.name).slice(0,80);
+ const f=getFamily(input.family);if(![...f.variants,...(f.legacyVariants||[])].some(v=>v[0]===input.variant))throw Error('零件款式无效。');
+ const s=fresh(input.family,input.variant);if(s.family==='custom')s.components=normalizeComponents(input.components);s.name=String(input.name||f.name).slice(0,80);
  for(const k of Object.keys(s.values)){if(input.values&&k in input.values)s.values[k]=input.values[k];}
  for(const o of f.options){const v=input.features?.[o[0]];if(v!==undefined){if(!o[2].some(x=>x[0]===v))throw Error(o[1]+'选项无效。');s.features[o[0]]=v;}}
  s.overrides=input.overrides&&typeof input.overrides==='object'&&!Array.isArray(input.overrides)?clone(input.overrides):{};
@@ -57,19 +61,11 @@ export function normalize(input){
  return s;
 }
 
-// Explicit constructive-solid tree, shared by the browser and independent CAD checker.
-export const cube=(x,y,z,pos=[0,0,0])=>({type:'box',size:[x,y,z],position:pos});
-export const cyl=(r,h,pos=[0,0,0],r2=r)=>({type:'cylinder',r,r2,h,position:pos});
-export const union=(...children)=>({type:'union',children:children.flat().filter(Boolean)});
-export const cut=(body,...tools)=>({type:'difference',children:[body,...tools.flat().filter(Boolean)]});
-export const transform=(body,rotate=[0,0,0],translate=[0,0,0])=>({type:'transform',body,rotate,translate});
-export const prism=(points,h)=>({type:'prism',points,h});
-export const revolve=points=>({type:'revolve',points});
 const TAU=2*Math.PI;
 
 export function buildDesign(raw){
  const s=normalize(raw),p=s.values,f=s.features,groups=[],cuts=[],details=[],warnings=[];
- let waterBoundary=null,waterInfo=null;
+ let waterBoundary=null,waterInfo=null,toolGroups=[];
  const assert=(v,m)=>{if(!v)throw Error(m);};
  for(const x of primaryFields(s))assert(Number.isFinite(p[x.key])&&p[x.key]>=x.min&&p[x.key]<=x.max,`${x.label}应在 ${x.min}～${x.max} mm 之间。`);
  assert(Number.isFinite(s.density)&&s.density>0&&s.density<=30,'密度应大于 0 且不超过 30 g/cm³。');
@@ -92,7 +88,31 @@ export function buildDesign(raw){
   add('ears','安装耳',union(Array.from({length:count},(_,i)=>transform(shape,[0,0,360*i/count]))),['earLength','earWidth','earT']);
   if(hole)for(let i=0;i<count;i++)cuts.push(transform(cyl(hole/2,thick+2,[x,0,z-1]),[0,0,360*i/count]));
  }
- if(s.family==='endcap'){
+ if(s.family==='custom'){
+  const design=buildCustom(s);groups.push(...design.groups);cuts.push(...design.cuts);toolGroups=design.toolGroups;
+  warnings.push('先合并所有添加材料，再扣除所有减料体；减料顺序无关，重叠只计一次。坐标按 mm，旋转按度。');
+ }else if(s.family==='endcap'&&['b3','b5'].includes(s.variant)){
+  const {D,H,t,bore,hubD}=p,R=D/2,isB5=s.variant==='b5';
+  assert(t<H,'壁厚应小于总深度。');assert(bore<hubD,'中心孔径应小于轴承座外径。');
+  const ph=isB5&&f.pilot?auto('pilotH','定位止口凸出高度',Math.min(t*.5,(H-t)*.3),.1,H-t-.1):0,h=H-ph;
+  const ratio=f.shell==='cone'?auto('backRatio','盖底 / 开口外径比',.82,.3,1,'倍'):1,rb=R*ratio;
+  assert(hubD<2*(rb-t),'轴承座外径应小于盖底内径；请增大主体或盖底比例。');
+  const hubH=auto('hubH','轴承座总高度',f.shell==='flat'?h:Math.min(h*.6,t*4),t,h);
+  const body=f.shell==='flat'?cyl(R,t):revolve([[0,0],[rb,0],[R,h],[R-t,h],[rb+(R-rb)*t/h-t,t],[0,t]]);
+  add('body','盖体',transform(body,[0,0,0],[0,0,ph]),['D','H','t','backRatio']);add('hub','轴承座',cyl(hubD/2,hubH,[0,0,ph]),['hubD','bore','hubH']);
+  if(bore>0)cuts.push(cyl(bore/2,H+2,[0,0,-1]));
+  if(isB5){
+   const fd=auto('mountFlangeD','B5 安装法兰外径',D*1.25,hubD+.5,D*2.5),ft=auto('mountFlangeT','B5 安装法兰厚度',t*1.8,.5,h);
+   add('mountFlange','B5 安装法兰',cyl(fd/2,ft,[0,0,ph]),['mountFlangeD','mountFlangeT']);
+   if(ph){const pd=auto('pilotD','定位止口外径',fd*.75,bore+.5,fd);add('pilot','法兰定位止口',cyl(pd/2,ph),['pilotD','pilotH']);}
+   if(f.flangeHoles){const hd=auto('flangeHoleD','法兰铸出孔径',Math.min(t*1.5,(fd-bore)*.15),.5,(fd-bore)*.4),n=auto('flangeHoleCount','法兰孔数量',4,2,16,'个'),pcd=auto('flangePCD','法兰孔分布圆直径',fd*.82,bore+hd+.1,fd-hd-.1);
+    assert(hd<pcd*Math.sin(Math.PI/n),'法兰孔过大或过密，相邻孔发生重叠。');for(let i=0;i<n;i++){const a=TAU*(i+.5)/n;cuts.push(cyl(hd/2,ph+ft+2,[pcd/2*Math.cos(a),pcd/2*Math.sin(a),-1]));}
+   }
+  }
+  if(f.ears){const et=auto('earT','安装耳厚度',t*1.5,.5,h),ew=auto('earWidth','安装耳宽度',D*.15,t,D),el=auto('earLength','安装耳伸出',D*.15,ew/2,D),hole=f.holes?auto('holeD','耳部铸出孔径',Math.min(ew*.35,et),.5,ew*.85):0;ears(f.ears,R,f.shell==='flat'?ph:H-et,et,ew,el,hole);}
+  if(f.ribs){const rt=auto('ribT','加强筋厚度',t*.7,.5,D/8),rh=auto('ribH','加强筋总高度',Math.min(hubH,h*.8),t,h);add('ribs','加强筋',transform(radialRibs(f.ribs,hubD/2-t*.4,rb-t*.4,t*.75,rh,rt),[0,0,0],[0,0,ph]),['ribT','ribH']);}
+  warnings.push('按普通端盖与凸缘端盖图纸的结构归类，尺寸仍为可编辑模板值；B5 安装法兰位于盖底侧，定位止口计入总深度。毛坯不扣后续加工孔。');
+ }else if(s.family==='endcap'){
   const {D,H,t,bore,hubD}=p,R=D/2;
   assert(t<H,'壁厚应小于总深度。');assert(hubD<D-2*t,'轴承座外径应小于主体内径。');assert(bore<hubD,'中心孔径应小于轴承座外径。');
   const backRatio=s.variant==='cone'?auto('backRatio','锥壳后端 / 前端直径比',.68,.3,1,'倍'):1,rb=R*backRatio;
@@ -220,7 +240,9 @@ export function buildDesign(raw){
  }
  function autoOnce(...args){const old=details.find(d=>d.key===args[0]);return old?old.value:auto(...args);}
  function roundedBox(L,W,H,r,pos){r=Math.min(r,L/2,W/2);return transform(union(cube(L-2*r,W,H,[r,0,0]),cube(L,W-2*r,H,[0,r,0]),[r,L-r].flatMap(x=>[r,W-r].map(y=>cyl(r,H,[x,y,0])))),[0,0,0],pos);}
+ if(s.family==='ring')warnings.push('这是旧版法兰／环件方案，保留原尺寸与重量；新建请用自定义组合。');
+ if(s.family==='endcap'&&!['b3','b5'].includes(s.variant))warnings.push('这是旧版端盖方案，保留原形状与重量；新建可选 B3 / B5。');
  if(s.family==='bracket')warnings.push('这是已取消类别的旧方案，仅保留读取兼容；新建请选择上方类别。');
  const known=new Set(details.map(d=>d.key));for(const key of Object.keys(s.overrides))if(!known.has(key))warnings.push(`未启用的详细参数 ${key} 本次不参与计算。`);
- return {state:s,groups,cuts,waterBoundary,waterInfo,tree:cut(union(groups.map(g=>g.shape)),cuts),details,warnings,primary:primaryFields(s),label:getFamily(s.family).variants.find(v=>v[0]===s.variant)[1]};
+ return {state:s,groups,cuts,toolGroups,waterBoundary,waterInfo,tree:cut(union(groups.map(g=>g.shape)),cuts),details,warnings,primary:primaryFields(s),label:[...getFamily(s.family).variants,...(getFamily(s.family).legacyVariants||[])].find(v=>v[0]===s.variant)[1]};
 }

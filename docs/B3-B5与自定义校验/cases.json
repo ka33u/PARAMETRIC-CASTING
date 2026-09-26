@@ -1,0 +1,4979 @@
+[
+  {
+    "name": "b3-bowl",
+    "family": "endcap",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "family": "endcap",
+      "variant": "b3",
+      "name": "端盖",
+      "values": {
+        "D": 180,
+        "H": 50,
+        "t": 6,
+        "bore": 52,
+        "hubD": 85
+      },
+      "features": {
+        "shell": "bowl",
+        "pilot": false,
+        "flangeHoles": false,
+        "ears": 3,
+        "ribs": 3,
+        "flange": false,
+        "holes": false
+      },
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "transform",
+              "body": {
+                "type": "revolve",
+                "points": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    0
+                  ],
+                  [
+                    90,
+                    50
+                  ],
+                  [
+                    84,
+                    50
+                  ],
+                  [
+                    84,
+                    6
+                  ],
+                  [
+                    0,
+                    6
+                  ]
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                0
+              ],
+              "translate": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "type": "cylinder",
+              "r": 42.5,
+              "r2": 42.5,
+              "h": 24,
+              "position": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          41
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          41
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          41
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          41
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    120
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          41
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          41
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    240
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "transform",
+              "body": {
+                "type": "union",
+                "children": [
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          87.6,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          24
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      0
+                    ],
+                    "translate": [
+                      0,
+                      2.1,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          87.6,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          24
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      120
+                    ],
+                    "translate": [
+                      -1.8186533479473213,
+                      -1.0499999999999996,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          87.6,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          24
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      240
+                    ],
+                    "translate": [
+                      1.8186533479473208,
+                      -1.050000000000001,
+                      0
+                    ]
+                  }
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                0
+              ],
+              "translate": [
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 26,
+          "r2": 26,
+          "h": 52,
+          "position": [
+            0,
+            0,
+            -1
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 372317.0478791635,
+    "export": false
+  },
+  {
+    "name": "b3-cone",
+    "family": "endcap",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "family": "endcap",
+      "variant": "b3",
+      "name": "端盖",
+      "values": {
+        "D": 180,
+        "H": 50,
+        "t": 6,
+        "bore": 52,
+        "hubD": 85
+      },
+      "features": {
+        "shell": "cone",
+        "pilot": false,
+        "flangeHoles": false,
+        "ears": 3,
+        "ribs": 3,
+        "flange": false,
+        "holes": false
+      },
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "transform",
+              "body": {
+                "type": "revolve",
+                "points": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    73.8,
+                    0
+                  ],
+                  [
+                    90,
+                    50
+                  ],
+                  [
+                    84,
+                    50
+                  ],
+                  [
+                    69.744,
+                    6
+                  ],
+                  [
+                    0,
+                    6
+                  ]
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                0
+              ],
+              "translate": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "type": "cylinder",
+              "r": 42.5,
+              "r2": 42.5,
+              "h": 24,
+              "position": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          41
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          41
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          41
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          41
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    120
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          41
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          41
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    240
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "transform",
+              "body": {
+                "type": "union",
+                "children": [
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          71.39999999999999,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          24
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      0
+                    ],
+                    "translate": [
+                      0,
+                      2.1,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          71.39999999999999,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          24
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      120
+                    ],
+                    "translate": [
+                      -1.8186533479473213,
+                      -1.0499999999999996,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          71.39999999999999,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          24
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      240
+                    ],
+                    "translate": [
+                      1.8186533479473208,
+                      -1.050000000000001,
+                      0
+                    ]
+                  }
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                0
+              ],
+              "translate": [
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 26,
+          "r2": 26,
+          "h": 52,
+          "position": [
+            0,
+            0,
+            -1
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 311544.9517927926,
+    "export": true
+  },
+  {
+    "name": "b3-flat",
+    "family": "endcap",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "family": "endcap",
+      "variant": "b3",
+      "name": "端盖",
+      "values": {
+        "D": 180,
+        "H": 50,
+        "t": 6,
+        "bore": 52,
+        "hubD": 85
+      },
+      "features": {
+        "shell": "flat",
+        "pilot": false,
+        "flangeHoles": false,
+        "ears": 3,
+        "ribs": 3,
+        "flange": false,
+        "holes": false
+      },
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "transform",
+              "body": {
+                "type": "cylinder",
+                "r": 90,
+                "r2": 90,
+                "h": 6,
+                "position": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                0
+              ],
+              "translate": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "type": "cylinder",
+              "r": 42.5,
+              "r2": 42.5,
+              "h": 50,
+              "position": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          0
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          0
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          0
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          0
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    120
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          0
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          0
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    240
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "transform",
+              "body": {
+                "type": "union",
+                "children": [
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          87.6,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          40
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      0
+                    ],
+                    "translate": [
+                      0,
+                      2.1,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          87.6,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          40
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      120
+                    ],
+                    "translate": [
+                      -1.8186533479473213,
+                      -1.0499999999999996,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          87.6,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          40
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      240
+                    ],
+                    "translate": [
+                      1.8186533479473208,
+                      -1.050000000000001,
+                      0
+                    ]
+                  }
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                0
+              ],
+              "translate": [
+                0,
+                0,
+                0
+              ]
+            }
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 26,
+          "r2": 26,
+          "h": 52,
+          "position": [
+            0,
+            0,
+            -1
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 324721.6127615047,
+    "export": false
+  },
+  {
+    "name": "b5-bowl",
+    "family": "endcap",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "family": "endcap",
+      "variant": "b5",
+      "name": "端盖",
+      "values": {
+        "D": 180,
+        "H": 50,
+        "t": 6,
+        "bore": 52,
+        "hubD": 85
+      },
+      "features": {
+        "shell": "bowl",
+        "pilot": true,
+        "flangeHoles": true,
+        "ears": 3,
+        "ribs": 3,
+        "flange": false,
+        "holes": false
+      },
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "transform",
+              "body": {
+                "type": "revolve",
+                "points": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    90,
+                    0
+                  ],
+                  [
+                    90,
+                    47
+                  ],
+                  [
+                    84,
+                    47
+                  ],
+                  [
+                    84,
+                    6
+                  ],
+                  [
+                    0,
+                    6
+                  ]
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                0
+              ],
+              "translate": [
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "type": "cylinder",
+              "r": 42.5,
+              "r2": 42.5,
+              "h": 24,
+              "position": [
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "type": "cylinder",
+              "r": 112.5,
+              "r2": 112.5,
+              "h": 10.8,
+              "position": [
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "type": "cylinder",
+              "r": 84.375,
+              "r2": 84.375,
+              "h": 3,
+              "position": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          41
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          41
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          41
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          41
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    120
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          41
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          41
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    240
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "transform",
+              "body": {
+                "type": "union",
+                "children": [
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          87.6,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          24
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      0
+                    ],
+                    "translate": [
+                      0,
+                      2.1,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          87.6,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          24
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      120
+                    ],
+                    "translate": [
+                      -1.8186533479473213,
+                      -1.0499999999999996,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          87.6,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          24
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      240
+                    ],
+                    "translate": [
+                      1.8186533479473208,
+                      -1.050000000000001,
+                      0
+                    ]
+                  }
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                0
+              ],
+              "translate": [
+                0,
+                0,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 26,
+          "r2": 26,
+          "h": 52,
+          "position": [
+            0,
+            0,
+            -1
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 4.5,
+          "r2": 4.5,
+          "h": 15.8,
+          "position": [
+            65.23060056445901,
+            65.23060056445901,
+            -1
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 4.5,
+          "r2": 4.5,
+          "h": 15.8,
+          "position": [
+            -65.23060056445901,
+            65.23060056445901,
+            -1
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 4.5,
+          "r2": 4.5,
+          "h": 15.8,
+          "position": [
+            -65.23060056445902,
+            -65.23060056445901,
+            -1
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 4.5,
+          "r2": 4.5,
+          "h": 15.8,
+          "position": [
+            65.230600564459,
+            -65.23060056445902,
+            -1
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 651977.4722290343,
+    "export": false
+  },
+  {
+    "name": "b5-cone",
+    "family": "endcap",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "family": "endcap",
+      "variant": "b5",
+      "name": "端盖",
+      "values": {
+        "D": 180,
+        "H": 50,
+        "t": 6,
+        "bore": 52,
+        "hubD": 85
+      },
+      "features": {
+        "shell": "cone",
+        "pilot": true,
+        "flangeHoles": true,
+        "ears": 3,
+        "ribs": 3,
+        "flange": false,
+        "holes": false
+      },
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "transform",
+              "body": {
+                "type": "revolve",
+                "points": [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    73.8,
+                    0
+                  ],
+                  [
+                    90,
+                    47
+                  ],
+                  [
+                    84,
+                    47
+                  ],
+                  [
+                    69.86808510638298,
+                    6
+                  ],
+                  [
+                    0,
+                    6
+                  ]
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                0
+              ],
+              "translate": [
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "type": "cylinder",
+              "r": 42.5,
+              "r2": 42.5,
+              "h": 24,
+              "position": [
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "type": "cylinder",
+              "r": 112.5,
+              "r2": 112.5,
+              "h": 10.8,
+              "position": [
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "type": "cylinder",
+              "r": 84.375,
+              "r2": 84.375,
+              "h": 3,
+              "position": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          41
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          41
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          41
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          41
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    120
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          41
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          41
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    240
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "transform",
+              "body": {
+                "type": "union",
+                "children": [
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          71.39999999999999,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          24
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      0
+                    ],
+                    "translate": [
+                      0,
+                      2.1,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          71.39999999999999,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          24
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      120
+                    ],
+                    "translate": [
+                      -1.8186533479473213,
+                      -1.0499999999999996,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          71.39999999999999,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          24
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      240
+                    ],
+                    "translate": [
+                      1.8186533479473208,
+                      -1.050000000000001,
+                      0
+                    ]
+                  }
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                0
+              ],
+              "translate": [
+                0,
+                0,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 26,
+          "r2": 26,
+          "h": 52,
+          "position": [
+            0,
+            0,
+            -1
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 4.5,
+          "r2": 4.5,
+          "h": 15.8,
+          "position": [
+            65.23060056445901,
+            65.23060056445901,
+            -1
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 4.5,
+          "r2": 4.5,
+          "h": 15.8,
+          "position": [
+            -65.23060056445901,
+            65.23060056445901,
+            -1
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 4.5,
+          "r2": 4.5,
+          "h": 15.8,
+          "position": [
+            -65.23060056445902,
+            -65.23060056445901,
+            -1
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 4.5,
+          "r2": 4.5,
+          "h": 15.8,
+          "position": [
+            65.230600564459,
+            -65.23060056445902,
+            -1
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 642648.4784434735,
+    "export": true
+  },
+  {
+    "name": "b5-flat",
+    "family": "endcap",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "family": "endcap",
+      "variant": "b5",
+      "name": "端盖",
+      "values": {
+        "D": 180,
+        "H": 50,
+        "t": 6,
+        "bore": 52,
+        "hubD": 85
+      },
+      "features": {
+        "shell": "flat",
+        "pilot": true,
+        "flangeHoles": true,
+        "ears": 3,
+        "ribs": 3,
+        "flange": false,
+        "holes": false
+      },
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "transform",
+              "body": {
+                "type": "cylinder",
+                "r": 90,
+                "r2": 90,
+                "h": 6,
+                "position": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                0
+              ],
+              "translate": [
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "type": "cylinder",
+              "r": 42.5,
+              "r2": 42.5,
+              "h": 47,
+              "position": [
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "type": "cylinder",
+              "r": 112.5,
+              "r2": 112.5,
+              "h": 10.8,
+              "position": [
+                0,
+                0,
+                3
+              ]
+            },
+            {
+              "type": "cylinder",
+              "r": 84.375,
+              "r2": 84.375,
+              "h": 3,
+              "position": [
+                0,
+                0,
+                0
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          3
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          3
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          3
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          3
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    120
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          22.5,
+                          27,
+                          9
+                        ],
+                        "position": [
+                          81,
+                          -13.5,
+                          3
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 13.5,
+                        "r2": 13.5,
+                        "h": 9,
+                        "position": [
+                          103.5,
+                          0,
+                          3
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    240
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "transform",
+              "body": {
+                "type": "union",
+                "children": [
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          87.6,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          37.6
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      0
+                    ],
+                    "translate": [
+                      0,
+                      2.1,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          87.6,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          37.6
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      120
+                    ],
+                    "translate": [
+                      -1.8186533479473213,
+                      -1.0499999999999996,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          40.1,
+                          4.5
+                        ],
+                        [
+                          87.6,
+                          4.5
+                        ],
+                        [
+                          40.1,
+                          37.6
+                        ]
+                      ],
+                      "h": 4.2
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      240
+                    ],
+                    "translate": [
+                      1.8186533479473208,
+                      -1.050000000000001,
+                      0
+                    ]
+                  }
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                0
+              ],
+              "translate": [
+                0,
+                0,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 26,
+          "r2": 26,
+          "h": 52,
+          "position": [
+            0,
+            0,
+            -1
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 4.5,
+          "r2": 4.5,
+          "h": 15.8,
+          "position": [
+            65.23060056445901,
+            65.23060056445901,
+            -1
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 4.5,
+          "r2": 4.5,
+          "h": 15.8,
+          "position": [
+            -65.23060056445901,
+            65.23060056445901,
+            -1
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 4.5,
+          "r2": 4.5,
+          "h": 15.8,
+          "position": [
+            -65.23060056445902,
+            -65.23060056445901,
+            -1
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 4.5,
+          "r2": 4.5,
+          "h": 15.8,
+          "position": [
+            65.230600564459,
+            -65.23060056445902,
+            -1
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 600433.6358505159,
+    "export": false
+  },
+  {
+    "name": "custom-cylinder",
+    "family": "custom",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "components": [
+        {
+          "id": "part-1",
+          "name": "圆柱",
+          "type": "cylinder",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "D": 100,
+            "H": 40
+          },
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "none",
+            "count": 4,
+            "step": [
+              60,
+              0,
+              0
+            ],
+            "radius": 80,
+            "angle": 0
+          }
+        }
+      ],
+      "family": "custom",
+      "variant": "assembly",
+      "name": "自定义组合",
+      "values": {},
+      "features": {},
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "cylinder",
+                    "r": 50,
+                    "r2": 50,
+                    "h": 40,
+                    "position": [
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 314127.7250932773,
+    "export": false
+  },
+  {
+    "name": "custom-tube",
+    "family": "custom",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "components": [
+        {
+          "id": "part-1",
+          "name": "圆管 / 圆环",
+          "type": "tube",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "D": 150,
+            "bore": 80,
+            "H": 30
+          },
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "none",
+            "count": 4,
+            "step": [
+              60,
+              0,
+              0
+            ],
+            "radius": 80,
+            "angle": 0
+          }
+        }
+      ],
+      "family": "custom",
+      "variant": "assembly",
+      "name": "自定义组合",
+      "values": {},
+      "features": {},
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "difference",
+                    "children": [
+                      {
+                        "type": "cylinder",
+                        "r": 75,
+                        "r2": 75,
+                        "h": 30,
+                        "position": [
+                          0,
+                          0,
+                          0
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 40,
+                        "r2": 40,
+                        "h": 32,
+                        "position": [
+                          0,
+                          0,
+                          -1
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 379309.22805013234,
+    "export": false
+  },
+  {
+    "name": "custom-box",
+    "family": "custom",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "components": [
+        {
+          "id": "part-1",
+          "name": "长方体 / 板",
+          "type": "box",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "L": 100,
+            "W": 70,
+            "H": 20
+          },
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "none",
+            "count": 4,
+            "step": [
+              60,
+              0,
+              0
+            ],
+            "radius": 80,
+            "angle": 0
+          }
+        }
+      ],
+      "family": "custom",
+      "variant": "assembly",
+      "name": "自定义组合",
+      "values": {},
+      "features": {},
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "box",
+                    "size": [
+                      100,
+                      70,
+                      20
+                    ],
+                    "position": [
+                      -50,
+                      -35,
+                      0
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 140000,
+    "export": false
+  },
+  {
+    "name": "custom-cone",
+    "family": "custom",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "components": [
+        {
+          "id": "part-1",
+          "name": "圆锥 / 圆台",
+          "type": "cone",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "D": 100,
+            "endD": 50,
+            "H": 60
+          },
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "none",
+            "count": 4,
+            "step": [
+              60,
+              0,
+              0
+            ],
+            "radius": 80,
+            "angle": 0
+          }
+        }
+      ],
+      "family": "custom",
+      "variant": "assembly",
+      "name": "自定义组合",
+      "values": {},
+      "features": {},
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "cylinder",
+                    "r": 50,
+                    "r2": 25,
+                    "h": 60,
+                    "position": [
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 274861.75945661764,
+    "export": false
+  },
+  {
+    "name": "custom-conetube",
+    "family": "custom",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "components": [
+        {
+          "id": "part-1",
+          "name": "锥形管",
+          "type": "conetube",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "D": 120,
+            "bore": 90,
+            "endD": 80,
+            "endBore": 50,
+            "H": 60
+          },
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "none",
+            "count": 4,
+            "step": [
+              60,
+              0,
+              0
+            ],
+            "radius": 80,
+            "angle": 0
+          }
+        }
+      ],
+      "family": "custom",
+      "variant": "assembly",
+      "name": "自定义组合",
+      "values": {},
+      "features": {},
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "revolve",
+                    "points": [
+                      [
+                        45,
+                        0
+                      ],
+                      [
+                        60,
+                        0
+                      ],
+                      [
+                        40,
+                        60
+                      ],
+                      [
+                        25,
+                        60
+                      ]
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 240307.70969635714,
+    "export": false
+  },
+  {
+    "name": "custom-wedge",
+    "family": "custom",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "components": [
+        {
+          "id": "part-1",
+          "name": "三角筋 / 楔块",
+          "type": "wedge",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "L": 70,
+            "W": 8,
+            "H": 50
+          },
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "none",
+            "count": 4,
+            "step": [
+              60,
+              0,
+              0
+            ],
+            "radius": 80,
+            "angle": 0
+          }
+        }
+      ],
+      "family": "custom",
+      "variant": "assembly",
+      "name": "自定义组合",
+      "values": {},
+      "features": {},
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "transform",
+                    "body": {
+                      "type": "prism",
+                      "points": [
+                        [
+                          0,
+                          0
+                        ],
+                        [
+                          70,
+                          0
+                        ],
+                        [
+                          0,
+                          50
+                        ]
+                      ],
+                      "h": 8
+                    },
+                    "rotate": [
+                      90,
+                      0,
+                      0
+                    ],
+                    "translate": [
+                      -35,
+                      4,
+                      0
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 14000,
+    "export": false
+  },
+  {
+    "name": "custom-sphere",
+    "family": "custom",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "components": [
+        {
+          "id": "part-1",
+          "name": "球体",
+          "type": "sphere",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "D": 80
+          },
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "none",
+            "count": 4,
+            "step": [
+              60,
+              0,
+              0
+            ],
+            "radius": 80,
+            "angle": 0
+          }
+        }
+      ],
+      "family": "custom",
+      "variant": "assembly",
+      "name": "自定义组合",
+      "values": {},
+      "features": {},
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "sphere",
+                    "r": 40,
+                    "position": [
+                      0,
+                      0,
+                      40
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 267987.62696856214,
+    "export": false
+  },
+  {
+    "name": "custom-torus",
+    "family": "custom",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "components": [
+        {
+          "id": "part-1",
+          "name": "圆截面圆环",
+          "type": "torus",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "centerD": 100,
+            "tubeD": 16
+          },
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "none",
+            "count": 4,
+            "step": [
+              60,
+              0,
+              0
+            ],
+            "radius": 80,
+            "angle": 0
+          }
+        }
+      ],
+      "family": "custom",
+      "variant": "assembly",
+      "name": "自定义组合",
+      "values": {},
+      "features": {},
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "revolve",
+                    "points": [
+                      [
+                        58,
+                        8
+                      ],
+                      [
+                        57.99036364964138,
+                        8.392541394619345
+                      ],
+                      [
+                        57.96147781337758,
+                        8.784137122636485
+                      ],
+                      [
+                        57.91341207971825,
+                        9.173843795642894
+                      ],
+                      [
+                        57.84628224322584,
+                        9.560722576129026
+                      ],
+                      [
+                        57.76025002555635,
+                        9.94384143922611
+                      ],
+                      [
+                        57.65552268585767,
+                        10.322277418035698
+                      ],
+                      [
+                        57.53235252146417,
+                        10.69511882713776
+                      ],
+                      [
+                        57.391036260090296,
+                        11.061467458920719
+                      ],
+                      [
+                        57.231914344987544,
+                        11.420440747442257
+                      ],
+                      [
+                        57.05537011478684,
+                        11.771173894607982
+                      ],
+                      [
+                        56.86182888000218,
+                        12.112821953545772
+                      ],
+                      [
+                        56.65175689842036,
+                        12.444561864156817
+                      ],
+                      [
+                        56.42566025184516,
+                        12.765594435939466
+                      ],
+                      [
+                        56.184083626901895,
+                        13.075146273309164
+                      ],
+                      [
+                        55.927609002839674,
+                        13.372471638776148
+                      ],
+                      [
+                        55.65685424949238,
+                        13.65685424949238
+                      ],
+                      [
+                        55.37247163877615,
+                        13.927609002839674
+                      ],
+                      [
+                        55.075146273309166,
+                        14.184083626901895
+                      ],
+                      [
+                        54.76559443593947,
+                        14.425660251845159
+                      ],
+                      [
+                        54.44456186415682,
+                        14.651756898420363
+                      ],
+                      [
+                        54.112821953545776,
+                        14.861828880002177
+                      ],
+                      [
+                        53.77117389460798,
+                        15.05537011478684
+                      ],
+                      [
+                        53.42044074744226,
+                        15.231914344987548
+                      ],
+                      [
+                        53.06146745892072,
+                        15.391036260090294
+                      ],
+                      [
+                        52.69511882713776,
+                        15.532352521464166
+                      ],
+                      [
+                        52.322277418035696,
+                        15.655522685857672
+                      ],
+                      [
+                        51.94384143922611,
+                        15.760250025556353
+                      ],
+                      [
+                        51.560722576129024,
+                        15.846282243225843
+                      ],
+                      [
+                        51.173843795642895,
+                        15.913412079718249
+                      ],
+                      [
+                        50.78413712263649,
+                        15.961477813377574
+                      ],
+                      [
+                        50.39254139461934,
+                        15.99036364964138
+                      ],
+                      [
+                        50,
+                        16
+                      ],
+                      [
+                        49.60745860538066,
+                        15.99036364964138
+                      ],
+                      [
+                        49.21586287736351,
+                        15.961477813377575
+                      ],
+                      [
+                        48.826156204357105,
+                        15.913412079718249
+                      ],
+                      [
+                        48.439277423870976,
+                        15.846282243225843
+                      ],
+                      [
+                        48.05615856077389,
+                        15.760250025556353
+                      ],
+                      [
+                        47.677722581964304,
+                        15.655522685857672
+                      ],
+                      [
+                        47.30488117286224,
+                        15.532352521464166
+                      ],
+                      [
+                        46.93853254107928,
+                        15.391036260090294
+                      ],
+                      [
+                        46.57955925255774,
+                        15.231914344987548
+                      ],
+                      [
+                        46.22882610539202,
+                        15.05537011478684
+                      ],
+                      [
+                        45.887178046454224,
+                        14.861828880002177
+                      ],
+                      [
+                        45.55543813584318,
+                        14.651756898420363
+                      ],
+                      [
+                        45.23440556406053,
+                        14.425660251845159
+                      ],
+                      [
+                        44.924853726690834,
+                        14.184083626901897
+                      ],
+                      [
+                        44.62752836122385,
+                        13.927609002839672
+                      ],
+                      [
+                        44.34314575050762,
+                        13.65685424949238
+                      ],
+                      [
+                        44.072390997160326,
+                        13.372471638776148
+                      ],
+                      [
+                        43.815916373098105,
+                        13.075146273309164
+                      ],
+                      [
+                        43.57433974815484,
+                        12.765594435939468
+                      ],
+                      [
+                        43.34824310157964,
+                        12.444561864156817
+                      ],
+                      [
+                        43.13817111999782,
+                        12.112821953545774
+                      ],
+                      [
+                        42.94462988521316,
+                        11.771173894607983
+                      ],
+                      [
+                        42.768085655012456,
+                        11.420440747442257
+                      ],
+                      [
+                        42.608963739909704,
+                        11.061467458920719
+                      ],
+                      [
+                        42.46764747853584,
+                        10.695118827137762
+                      ],
+                      [
+                        42.34447731414233,
+                        10.3222774180357
+                      ],
+                      [
+                        42.23974997444365,
+                        9.943841439226112
+                      ],
+                      [
+                        42.15371775677416,
+                        9.560722576129029
+                      ],
+                      [
+                        42.08658792028175,
+                        9.173843795642895
+                      ],
+                      [
+                        42.03852218662242,
+                        8.784137122636487
+                      ],
+                      [
+                        42.00963635035862,
+                        8.392541394619343
+                      ],
+                      [
+                        42,
+                        8.000000000000002
+                      ],
+                      [
+                        42.00963635035862,
+                        7.607458605380658
+                      ],
+                      [
+                        42.03852218662242,
+                        7.215862877363516
+                      ],
+                      [
+                        42.08658792028175,
+                        6.826156204357107
+                      ],
+                      [
+                        42.15371775677416,
+                        6.439277423870973
+                      ],
+                      [
+                        42.23974997444365,
+                        6.0561585607738895
+                      ],
+                      [
+                        42.34447731414233,
+                        5.677722581964304
+                      ],
+                      [
+                        42.46764747853583,
+                        5.30488117286224
+                      ],
+                      [
+                        42.608963739909704,
+                        4.938532541079283
+                      ],
+                      [
+                        42.768085655012456,
+                        4.579559252557745
+                      ],
+                      [
+                        42.94462988521316,
+                        4.228826105392018
+                      ],
+                      [
+                        43.13817111999782,
+                        3.8871780464542276
+                      ],
+                      [
+                        43.348243101579634,
+                        3.5554381358431844
+                      ],
+                      [
+                        43.57433974815484,
+                        3.234405564060534
+                      ],
+                      [
+                        43.815916373098105,
+                        2.924853726690838
+                      ],
+                      [
+                        44.072390997160326,
+                        2.6275283612238525
+                      ],
+                      [
+                        44.34314575050762,
+                        2.3431457505076203
+                      ],
+                      [
+                        44.62752836122385,
+                        2.072390997160329
+                      ],
+                      [
+                        44.924853726690834,
+                        1.8159163730981067
+                      ],
+                      [
+                        45.23440556406054,
+                        1.5743397481548396
+                      ],
+                      [
+                        45.55543813584318,
+                        1.3482431015796381
+                      ],
+                      [
+                        45.887178046454224,
+                        1.138171119997824
+                      ],
+                      [
+                        46.22882610539202,
+                        0.9446298852131605
+                      ],
+                      [
+                        46.57955925255774,
+                        0.7680856550124551
+                      ],
+                      [
+                        46.938532541079276,
+                        0.6089637399097079
+                      ],
+                      [
+                        47.30488117286224,
+                        0.46764747853583355
+                      ],
+                      [
+                        47.677722581964304,
+                        0.3444773141423294
+                      ],
+                      [
+                        48.05615856077389,
+                        0.2397499744436482
+                      ],
+                      [
+                        48.43927742387097,
+                        0.15371775677415744
+                      ],
+                      [
+                        48.826156204357105,
+                        0.08658792028175277
+                      ],
+                      [
+                        49.21586287736351,
+                        0.03852218662242457
+                      ],
+                      [
+                        49.60745860538066,
+                        0.00963635035862076
+                      ],
+                      [
+                        50,
+                        0
+                      ],
+                      [
+                        50.39254139461934,
+                        0.00963635035862076
+                      ],
+                      [
+                        50.78413712263648,
+                        0.03852218662242457
+                      ],
+                      [
+                        51.173843795642895,
+                        0.08658792028175277
+                      ],
+                      [
+                        51.560722576129024,
+                        0.15371775677415656
+                      ],
+                      [
+                        51.94384143922611,
+                        0.2397499744436482
+                      ],
+                      [
+                        52.322277418035696,
+                        0.3444773141423285
+                      ],
+                      [
+                        52.695118827137755,
+                        0.46764747853583266
+                      ],
+                      [
+                        53.06146745892072,
+                        0.608963739909707
+                      ],
+                      [
+                        53.42044074744226,
+                        0.7680856550124533
+                      ],
+                      [
+                        53.77117389460798,
+                        0.9446298852131596
+                      ],
+                      [
+                        54.112821953545776,
+                        1.1381711199978222
+                      ],
+                      [
+                        54.44456186415682,
+                        1.3482431015796363
+                      ],
+                      [
+                        54.76559443593946,
+                        1.5743397481548378
+                      ],
+                      [
+                        55.075146273309166,
+                        1.815916373098105
+                      ],
+                      [
+                        55.37247163877615,
+                        2.072390997160327
+                      ],
+                      [
+                        55.656854249492376,
+                        2.3431457505076185
+                      ],
+                      [
+                        55.927609002839674,
+                        2.6275283612238507
+                      ],
+                      [
+                        56.184083626901895,
+                        2.9248537266908325
+                      ],
+                      [
+                        56.42566025184516,
+                        3.234405564060534
+                      ],
+                      [
+                        56.65175689842036,
+                        3.5554381358431826
+                      ],
+                      [
+                        56.86182888000218,
+                        3.887178046454225
+                      ],
+                      [
+                        57.05537011478684,
+                        4.228826105392017
+                      ],
+                      [
+                        57.231914344987544,
+                        4.57955925255774
+                      ],
+                      [
+                        57.39103626009029,
+                        4.938532541079277
+                      ],
+                      [
+                        57.53235252146417,
+                        5.30488117286224
+                      ],
+                      [
+                        57.65552268585767,
+                        5.6777225819643
+                      ],
+                      [
+                        57.76025002555635,
+                        6.056158560773887
+                      ],
+                      [
+                        57.84628224322584,
+                        6.43927742387097
+                      ],
+                      [
+                        57.91341207971825,
+                        6.826156204357101
+                      ],
+                      [
+                        57.96147781337758,
+                        7.215862877363516
+                      ],
+                      [
+                        57.99036364964138,
+                        7.607458605380655
+                      ]
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 63133.76527055156,
+    "export": false
+  },
+  {
+    "name": "custom-capsule",
+    "family": "custom",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "components": [
+        {
+          "id": "part-1",
+          "name": "腰形柱 / 腰形孔",
+          "type": "capsule",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "L": 100,
+            "W": 40,
+            "H": 20
+          },
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "none",
+            "count": 4,
+            "step": [
+              60,
+              0,
+              0
+            ],
+            "radius": 80,
+            "angle": 0
+          }
+        }
+      ],
+      "family": "custom",
+      "variant": "assembly",
+      "name": "自定义组合",
+      "values": {},
+      "features": {},
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "union",
+                    "children": [
+                      {
+                        "type": "box",
+                        "size": [
+                          60,
+                          40,
+                          20
+                        ],
+                        "position": [
+                          -30,
+                          -20,
+                          0
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 20,
+                        "r2": 20,
+                        "h": 20,
+                        "position": [
+                          -30,
+                          0,
+                          0
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 20,
+                        "r2": 20,
+                        "h": 20,
+                        "position": [
+                          30,
+                          0,
+                          0
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 73130.21800746219,
+    "export": false
+  },
+  {
+    "name": "custom-regular",
+    "family": "custom",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "components": [
+        {
+          "id": "part-1",
+          "name": "正多边形柱",
+          "type": "regular",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "D": 80,
+            "H": 25,
+            "sides": 6
+          },
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "none",
+            "count": 4,
+            "step": [
+              60,
+              0,
+              0
+            ],
+            "radius": 80,
+            "angle": 0
+          }
+        }
+      ],
+      "family": "custom",
+      "variant": "assembly",
+      "name": "自定义组合",
+      "values": {},
+      "features": {},
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "prism",
+                    "points": [
+                      [
+                        40,
+                        0
+                      ],
+                      [
+                        20.000000000000004,
+                        34.64101615137754
+                      ],
+                      [
+                        -19.999999999999993,
+                        34.64101615137755
+                      ],
+                      [
+                        -40,
+                        4.898587196589413e-15
+                      ],
+                      [
+                        -20.000000000000018,
+                        -34.64101615137754
+                      ],
+                      [
+                        20.000000000000004,
+                        -34.64101615137754
+                      ]
+                    ],
+                    "h": 25
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 103923.04844409227,
+    "export": false
+  },
+  {
+    "name": "custom-extrude",
+    "family": "custom",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "components": [
+        {
+          "id": "part-1",
+          "name": "自定义截面拉伸",
+          "type": "extrude",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "H": 30
+          },
+          "profile": "-50,-30\n50,-30\n50,10\n0,35\n-50,10",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "none",
+            "count": 4,
+            "step": [
+              60,
+              0,
+              0
+            ],
+            "radius": 80,
+            "angle": 0
+          }
+        }
+      ],
+      "family": "custom",
+      "variant": "assembly",
+      "name": "自定义组合",
+      "values": {},
+      "features": {},
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "prism",
+                    "points": [
+                      [
+                        -50,
+                        -30
+                      ],
+                      [
+                        50,
+                        -30
+                      ],
+                      [
+                        50,
+                        10
+                      ],
+                      [
+                        0,
+                        35
+                      ],
+                      [
+                        -50,
+                        10
+                      ]
+                    ],
+                    "h": 30
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 157500,
+    "export": false
+  },
+  {
+    "name": "custom-revolve",
+    "family": "custom",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "components": [
+        {
+          "id": "part-1",
+          "name": "自定义截面回转",
+          "type": "revolve",
+          "operation": "add",
+          "enabled": true,
+          "values": {},
+          "profile": "30,0\n65,0\n65,12\n48,12\n48,55\n30,55",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "none",
+            "count": 4,
+            "step": [
+              60,
+              0,
+              0
+            ],
+            "radius": 80,
+            "angle": 0
+          }
+        }
+      ],
+      "family": "custom",
+      "variant": "assembly",
+      "name": "自定义组合",
+      "values": {},
+      "features": {},
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "revolve",
+                    "points": [
+                      [
+                        30,
+                        0
+                      ],
+                      [
+                        65,
+                        0
+                      ],
+                      [
+                        65,
+                        12
+                      ],
+                      [
+                        48,
+                        12
+                      ],
+                      [
+                        48,
+                        55
+                      ],
+                      [
+                        30,
+                        55
+                      ]
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 314982.15250553103,
+    "export": false
+  },
+  {
+    "name": "custom-plate-ring-holes",
+    "family": "custom",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "components": [
+        {
+          "id": "base",
+          "name": "长方体 / 板",
+          "type": "box",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "L": 180,
+            "W": 150,
+            "H": 12
+          },
+          "position": [
+            0,
+            0,
+            -12
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "none",
+            "count": 4,
+            "step": [
+              60,
+              0,
+              0
+            ],
+            "radius": 80,
+            "angle": 0
+          }
+        },
+        {
+          "id": "ring",
+          "name": "圆管 / 圆环",
+          "type": "tube",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "D": 150,
+            "bore": 80,
+            "H": 30
+          },
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "none",
+            "count": 4,
+            "step": [
+              60,
+              0,
+              0
+            ],
+            "radius": 80,
+            "angle": 0
+          }
+        },
+        {
+          "id": "holes",
+          "name": "圆柱",
+          "type": "cylinder",
+          "operation": "cut",
+          "enabled": true,
+          "values": {
+            "D": 12,
+            "H": 56
+          },
+          "position": [
+            0,
+            0,
+            -13
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "circle",
+            "count": 4,
+            "step": [
+              0,
+              0,
+              0
+            ],
+            "radius": 55,
+            "angle": 45
+          }
+        },
+        {
+          "id": "ribs",
+          "name": "三角筋 / 楔块",
+          "type": "wedge",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "L": 30,
+            "W": 6,
+            "H": 45
+          },
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "array": {
+            "type": "circle",
+            "count": 3,
+            "step": [
+              0,
+              0,
+              0
+            ],
+            "radius": 60,
+            "angle": 0
+          }
+        }
+      ],
+      "family": "custom",
+      "variant": "assembly",
+      "name": "自定义组合",
+      "values": {},
+      "features": {},
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "box",
+                    "size": [
+                      180,
+                      150,
+                      12
+                    ],
+                    "position": [
+                      -90,
+                      -75,
+                      0
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    -12
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "difference",
+                    "children": [
+                      {
+                        "type": "cylinder",
+                        "r": 75,
+                        "r2": 75,
+                        "h": 30,
+                        "position": [
+                          0,
+                          0,
+                          0
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 40,
+                        "r2": 40,
+                        "h": 32,
+                        "position": [
+                          0,
+                          0,
+                          -1
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "transform",
+              "body": {
+                "type": "transform",
+                "body": {
+                  "type": "cylinder",
+                  "r": 6,
+                  "r2": 6,
+                  "h": 56,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "rotate": [
+                  0,
+                  0,
+                  0
+                ],
+                "translate": [
+                  55,
+                  0,
+                  0
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                45
+              ],
+              "translate": [
+                0,
+                0,
+                -13
+              ]
+            },
+            {
+              "type": "transform",
+              "body": {
+                "type": "transform",
+                "body": {
+                  "type": "cylinder",
+                  "r": 6,
+                  "r2": 6,
+                  "h": 56,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "rotate": [
+                  0,
+                  0,
+                  0
+                ],
+                "translate": [
+                  55,
+                  0,
+                  0
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                135
+              ],
+              "translate": [
+                0,
+                0,
+                -13
+              ]
+            },
+            {
+              "type": "transform",
+              "body": {
+                "type": "transform",
+                "body": {
+                  "type": "cylinder",
+                  "r": 6,
+                  "r2": 6,
+                  "h": 56,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "rotate": [
+                  0,
+                  0,
+                  0
+                ],
+                "translate": [
+                  55,
+                  0,
+                  0
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                225
+              ],
+              "translate": [
+                0,
+                0,
+                -13
+              ]
+            },
+            {
+              "type": "transform",
+              "body": {
+                "type": "transform",
+                "body": {
+                  "type": "cylinder",
+                  "r": 6,
+                  "r2": 6,
+                  "h": 56,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "rotate": [
+                  0,
+                  0,
+                  0
+                ],
+                "translate": [
+                  55,
+                  0,
+                  0
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                315
+              ],
+              "translate": [
+                0,
+                0,
+                -13
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 684310.7832364909,
+    "export": true
+  },
+  {
+    "name": "custom-plate-ribs-holes",
+    "family": "custom",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "components": [
+        {
+          "id": "base",
+          "name": "长方体 / 板",
+          "type": "box",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "L": 180,
+            "W": 150,
+            "H": 12
+          },
+          "position": [
+            0,
+            0,
+            -12
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "none",
+            "count": 4,
+            "step": [
+              60,
+              0,
+              0
+            ],
+            "radius": 80,
+            "angle": 0
+          }
+        },
+        {
+          "id": "ring",
+          "name": "圆管 / 圆环",
+          "type": "tube",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "D": 150,
+            "bore": 80,
+            "H": 30
+          },
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "none",
+            "count": 4,
+            "step": [
+              60,
+              0,
+              0
+            ],
+            "radius": 80,
+            "angle": 0
+          }
+        },
+        {
+          "id": "holes",
+          "name": "圆柱",
+          "type": "cylinder",
+          "operation": "cut",
+          "enabled": true,
+          "values": {
+            "D": 12,
+            "H": 56
+          },
+          "position": [
+            0,
+            0,
+            -13
+          ],
+          "rotation": [
+            0,
+            0,
+            0
+          ],
+          "array": {
+            "type": "circle",
+            "count": 4,
+            "step": [
+              0,
+              0,
+              0
+            ],
+            "radius": 55,
+            "angle": 45
+          }
+        },
+        {
+          "id": "ribs",
+          "name": "三角筋 / 楔块",
+          "type": "wedge",
+          "operation": "add",
+          "enabled": true,
+          "values": {
+            "L": 30,
+            "W": 6,
+            "H": 45
+          },
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "rotation": [
+            0,
+            0,
+            180
+          ],
+          "array": {
+            "type": "circle",
+            "count": 3,
+            "step": [
+              0,
+              0,
+              0
+            ],
+            "radius": 60,
+            "angle": 0
+          }
+        }
+      ],
+      "family": "custom",
+      "variant": "assembly",
+      "name": "自定义组合",
+      "values": {},
+      "features": {},
+      "overrides": {},
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "box",
+                    "size": [
+                      180,
+                      150,
+                      12
+                    ],
+                    "position": [
+                      -90,
+                      -75,
+                      0
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    -12
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "difference",
+                    "children": [
+                      {
+                        "type": "cylinder",
+                        "r": 75,
+                        "r2": 75,
+                        "h": 30,
+                        "position": [
+                          0,
+                          0,
+                          0
+                        ]
+                      },
+                      {
+                        "type": "cylinder",
+                        "r": 40,
+                        "r2": 40,
+                        "h": 32,
+                        "position": [
+                          0,
+                          0,
+                          -1
+                        ]
+                      }
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "transform",
+                    "body": {
+                      "type": "transform",
+                      "body": {
+                        "type": "prism",
+                        "points": [
+                          [
+                            0,
+                            0
+                          ],
+                          [
+                            30,
+                            0
+                          ],
+                          [
+                            0,
+                            45
+                          ]
+                        ],
+                        "h": 6
+                      },
+                      "rotate": [
+                        90,
+                        0,
+                        0
+                      ],
+                      "translate": [
+                        -15,
+                        3,
+                        0
+                      ]
+                    },
+                    "rotate": [
+                      0,
+                      0,
+                      180
+                    ],
+                    "translate": [
+                      60,
+                      0,
+                      0
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "transform",
+                    "body": {
+                      "type": "transform",
+                      "body": {
+                        "type": "prism",
+                        "points": [
+                          [
+                            0,
+                            0
+                          ],
+                          [
+                            30,
+                            0
+                          ],
+                          [
+                            0,
+                            45
+                          ]
+                        ],
+                        "h": 6
+                      },
+                      "rotate": [
+                        90,
+                        0,
+                        0
+                      ],
+                      "translate": [
+                        -15,
+                        3,
+                        0
+                      ]
+                    },
+                    "rotate": [
+                      0,
+                      0,
+                      180
+                    ],
+                    "translate": [
+                      60,
+                      0,
+                      0
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    120
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "transform",
+                    "body": {
+                      "type": "transform",
+                      "body": {
+                        "type": "prism",
+                        "points": [
+                          [
+                            0,
+                            0
+                          ],
+                          [
+                            30,
+                            0
+                          ],
+                          [
+                            0,
+                            45
+                          ]
+                        ],
+                        "h": 6
+                      },
+                      "rotate": [
+                        90,
+                        0,
+                        0
+                      ],
+                      "translate": [
+                        -15,
+                        3,
+                        0
+                      ]
+                    },
+                    "rotate": [
+                      0,
+                      0,
+                      180
+                    ],
+                    "translate": [
+                      60,
+                      0,
+                      0
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    240
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "transform",
+              "body": {
+                "type": "transform",
+                "body": {
+                  "type": "cylinder",
+                  "r": 6,
+                  "r2": 6,
+                  "h": 56,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "rotate": [
+                  0,
+                  0,
+                  0
+                ],
+                "translate": [
+                  55,
+                  0,
+                  0
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                45
+              ],
+              "translate": [
+                0,
+                0,
+                -13
+              ]
+            },
+            {
+              "type": "transform",
+              "body": {
+                "type": "transform",
+                "body": {
+                  "type": "cylinder",
+                  "r": 6,
+                  "r2": 6,
+                  "h": 56,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "rotate": [
+                  0,
+                  0,
+                  0
+                ],
+                "translate": [
+                  55,
+                  0,
+                  0
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                135
+              ],
+              "translate": [
+                0,
+                0,
+                -13
+              ]
+            },
+            {
+              "type": "transform",
+              "body": {
+                "type": "transform",
+                "body": {
+                  "type": "cylinder",
+                  "r": 6,
+                  "r2": 6,
+                  "h": 56,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "rotate": [
+                  0,
+                  0,
+                  0
+                ],
+                "translate": [
+                  55,
+                  0,
+                  0
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                225
+              ],
+              "translate": [
+                0,
+                0,
+                -13
+              ]
+            },
+            {
+              "type": "transform",
+              "body": {
+                "type": "transform",
+                "body": {
+                  "type": "cylinder",
+                  "r": 6,
+                  "r2": 6,
+                  "h": 56,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                "rotate": [
+                  0,
+                  0,
+                  0
+                ],
+                "translate": [
+                  55,
+                  0,
+                  0
+                ]
+              },
+              "rotate": [
+                0,
+                0,
+                315
+              ],
+              "translate": [
+                0,
+                0,
+                -13
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 685673.6229657402,
+    "export": false
+  }
+]
