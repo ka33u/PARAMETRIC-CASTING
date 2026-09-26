@@ -1,0 +1,16 @@
+{
+  "name": "casting-parametric-workbench",
+  "version": "2.1.0",
+  "private": true,
+  "scripts": {
+    "build": "node tools/build_parametric.mjs",
+    "test": "node --test tests/*.test.js tests/*.test.mjs"
+  },
+  "dependencies": {
+    "manifold-3d": "3.5.3",
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}

@@ -1,0 +1,426 @@
+[
+  {
+    "name": "endcap-bowl",
+    "family": "endcap",
+    "occt_mm3": 372352.1045994645,
+    "manifold_mm3": 372317.0478791635,
+    "relative_error": 9.414938137302917e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.115,
+    "step": ".runtime/solid-validation/endcap-bowl.step"
+  },
+  {
+    "name": "endcap-cone",
+    "family": "endcap",
+    "occt_mm3": 270789.8427434977,
+    "manifold_mm3": 270766.1463574425,
+    "relative_error": 8.750840066646095e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.175
+  },
+  {
+    "name": "endcap-flat",
+    "family": "endcap",
+    "occt_mm3": 324749.0540283843,
+    "manifold_mm3": 324721.6127615047,
+    "relative_error": 8.449991320731392e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.096
+  },
+  {
+    "name": "motor-axial",
+    "family": "motor",
+    "occt_mm3": 1778385.218543007,
+    "manifold_mm3": 1778341.0329503464,
+    "relative_error": 2.484590638741404e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.214,
+    "step": ".runtime/solid-validation/motor-axial.step"
+  },
+  {
+    "name": "motor-rings",
+    "family": "motor",
+    "occt_mm3": 1837527.8484237127,
+    "manifold_mm3": 1837392.4799709644,
+    "relative_error": 7.366878976250995e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.127
+  },
+  {
+    "name": "motor-plain",
+    "family": "motor",
+    "occt_mm3": 1578020.041134986,
+    "manifold_mm3": 1577910.1330583368,
+    "relative_error": 6.964935411735826e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.056
+  },
+  {
+    "name": "bearing-inner",
+    "family": "bearing",
+    "occt_mm3": 99487.95615388159,
+    "manifold_mm3": 99477.96798253905,
+    "relative_error": 0.00010039578385842988,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.008
+  },
+  {
+    "name": "bearing-outer",
+    "family": "bearing",
+    "occt_mm3": 99487.95615388158,
+    "manifold_mm3": 99477.96798253905,
+    "relative_error": 0.00010039578385828364,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.007
+  },
+  {
+    "name": "bearing-stepped",
+    "family": "bearing",
+    "occt_mm3": 85554.36441668014,
+    "manifold_mm3": 85545.77511920202,
+    "relative_error": 0.0001003957838583596,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.012
+  },
+  {
+    "name": "ring-ring",
+    "family": "ring",
+    "occt_mm3": 379347.3129209676,
+    "manifold_mm3": 379309.22805013234,
+    "relative_error": 0.0001003957838583052,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.003
+  },
+  {
+    "name": "ring-flange",
+    "family": "ring",
+    "occt_mm3": 213391.11019875997,
+    "manifold_mm3": 213369.68663098314,
+    "relative_error": 0.00010039578385845364,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.008
+  },
+  {
+    "name": "ring-cone",
+    "family": "ring",
+    "occt_mm3": 305127.18647990865,
+    "manifold_mm3": 305096.55299684557,
+    "relative_error": 0.00010039578385814348,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.0
+  },
+  {
+    "name": "box-box",
+    "family": "box",
+    "occt_mm3": 158050.00000000006,
+    "manifold_mm3": 158050.00000000003,
+    "relative_error": 1.8414318542697687e-16,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.011
+  },
+  {
+    "name": "box-rounded",
+    "family": "box",
+    "occt_mm3": 153986.9863479713,
+    "manifold_mm3": 153985.493484115,
+    "relative_error": 9.694740391507658e-06,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.168,
+    "step": ".runtime/solid-validation/box-rounded.step"
+  },
+  {
+    "name": "box-lid",
+    "family": "box",
+    "occt_mm3": 58050.0,
+    "manifold_mm3": 58050,
+    "relative_error": 0.0,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.007
+  },
+  {
+    "name": "bracket-foot",
+    "family": "bracket",
+    "occt_mm3": 44000.0,
+    "manifold_mm3": 44000,
+    "relative_error": 0.0,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.0
+  },
+  {
+    "name": "bracket-bracket",
+    "family": "bracket",
+    "occt_mm3": 68931.78181818184,
+    "manifold_mm3": 68931.78181818181,
+    "relative_error": 4.222120724152978e-16,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.011,
+    "step": ".runtime/solid-validation/bracket-bracket.step"
+  },
+  {
+    "name": "bracket-weight",
+    "family": "bracket",
+    "occt_mm3": 220000.0,
+    "manifold_mm3": 220000,
+    "relative_error": 0.0,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.0
+  },
+  {
+    "name": "endcap-all-features",
+    "family": "endcap",
+    "occt_mm3": 429905.28292772156,
+    "manifold_mm3": 429865.21269191895,
+    "relative_error": 9.320712583416719e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.266
+  },
+  {
+    "name": "endcap-scale-0.45",
+    "family": "endcap",
+    "occt_mm3": 39175.118906788615,
+    "manifold_mm3": 39171.46752891687,
+    "relative_error": 9.320655491639036e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.269
+  },
+  {
+    "name": "endcap-scale-2.7",
+    "family": "endcap",
+    "occt_mm3": 8461825.683866343,
+    "manifold_mm3": 8461036.982214388,
+    "relative_error": 9.320703136898622e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.269
+  },
+  {
+    "name": "motor-all-features",
+    "family": "motor",
+    "occt_mm3": 1847509.818845959,
+    "manifold_mm3": 1847479.1679382664,
+    "relative_error": 1.6590389604340748e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.351
+  },
+  {
+    "name": "motor-scale-0.45",
+    "family": "motor",
+    "occt_mm3": 168503.6651232128,
+    "manifold_mm3": 168500.93717580306,
+    "relative_error": 1.618924673083925e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.359
+  },
+  {
+    "name": "motor-scale-2.7",
+    "family": "motor",
+    "occt_mm3": 36368110.91679398,
+    "manifold_mm3": 36367507.364339374,
+    "relative_error": 1.659565040335905e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.354
+  },
+  {
+    "name": "bearing-all-features",
+    "family": "bearing",
+    "occt_mm3": 97257.11121056745,
+    "manifold_mm3": 97247.34700665169,
+    "relative_error": 0.0001003957838581624,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.026
+  },
+  {
+    "name": "bearing-scale-0.45",
+    "family": "bearing",
+    "occt_mm3": 8862.554259062965,
+    "manifold_mm3": 8861.664495981136,
+    "relative_error": 0.00010039578385863131,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.027
+  },
+  {
+    "name": "bearing-scale-2.7",
+    "family": "bearing",
+    "occt_mm3": 1914311.7199575996,
+    "manifold_mm3": 1914119.5311319253,
+    "relative_error": 0.00010039578385834248,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.026
+  },
+  {
+    "name": "ring-all-features",
+    "family": "ring",
+    "occt_mm3": 210574.7829688781,
+    "manifold_mm3": 210553.64214848113,
+    "relative_error": 0.00010039578385841805,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.019
+  },
+  {
+    "name": "ring-scale-0.45",
+    "family": "ring",
+    "occt_mm3": 19188.627098039015,
+    "manifold_mm3": 19186.700640780342,
+    "relative_error": 0.00010039578385831854,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.019
+  },
+  {
+    "name": "ring-scale-2.7",
+    "family": "ring",
+    "occt_mm3": 4144743.4531764286,
+    "manifold_mm3": 4144327.338408555,
+    "relative_error": 0.00010039578385840978,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.019
+  },
+  {
+    "name": "box-all-features",
+    "family": "box",
+    "occt_mm3": 161384.30592360414,
+    "manifold_mm3": 161384.3777762719,
+    "relative_error": 4.4522710768399235e-07,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.039
+  },
+  {
+    "name": "box-scale-0.45",
+    "family": "box",
+    "occt_mm3": 14706.12340469898,
+    "manifold_mm3": 14706.129954429094,
+    "relative_error": 4.4537434744301953e-07,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.039
+  },
+  {
+    "name": "box-scale-2.7",
+    "family": "box",
+    "occt_mm3": 3176527.293494301,
+    "manifold_mm3": 3176528.7077703592,
+    "relative_error": 4.45227107356033e-07,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.042
+  },
+  {
+    "name": "bracket-all-features",
+    "family": "bracket",
+    "occt_mm3": 67700.15183426849,
+    "manifold_mm3": 67700.27548472612,
+    "relative_error": 1.8264428407777763e-06,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.019
+  },
+  {
+    "name": "bracket-scale-0.45",
+    "family": "bracket",
+    "occt_mm3": 6169.176335897715,
+    "manifold_mm3": 6169.187603446782,
+    "relative_error": 1.8264268119076872e-06,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.019
+  },
+  {
+    "name": "bracket-scale-2.7",
+    "family": "bracket",
+    "occt_mm3": 1332542.0885539067,
+    "manifold_mm3": 1332544.5223623046,
+    "relative_error": 1.8264401694122633e-06,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.019
+  },
+  {
+    "name": "ring-solid-cone",
+    "family": "ring",
+    "occt_mm3": 387004.9450140926,
+    "manifold_mm3": 386966.09134928096,
+    "relative_error": 0.00010039578385807845,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.0
+  },
+  {
+    "name": "endcap-shallow",
+    "family": "endcap",
+    "occt_mm3": 162602.04642608686,
+    "manifold_mm3": 162588.9002470617,
+    "relative_error": 8.084879196846104e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.111
+  },
+  {
+    "name": "ring-thin-wall",
+    "family": "ring",
+    "occt_mm3": 7045.021525675256,
+    "manifold_mm3": 7044.314235216752,
+    "relative_error": 0.00010039578387747449,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.003
+  },
+  {
+    "name": "motor-small-bore",
+    "family": "motor",
+    "occt_mm3": 8362912.732352192,
+    "manifold_mm3": 8362073.131173089,
+    "relative_error": 0.00010039578385822586,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.005
+  },
+  {
+    "name": "box-through-open",
+    "family": "box",
+    "occt_mm3": 110000.00000000006,
+    "manifold_mm3": 109999.99999999999,
+    "relative_error": 6.614506921984929e-16,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.005
+  },
+  {
+    "name": "bracket-override-and-holes",
+    "family": "bracket",
+    "occt_mm3": 80102.18819790485,
+    "manifold_mm3": 80102.3118483625,
+    "relative_error": 1.5436589241023286e-06,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.02
+  }
+]

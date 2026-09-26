@@ -1,0 +1,6 @@
+dist/param-app.js linguist-generated=true -whitespace
+铸件重量计算器.html linguist-generated=true -whitespace
+*.step linguist-generated=true -whitespace
+dist/THIRD-PARTY-NOTICES.txt -whitespace
+docs/**/cases.json linguist-generated=true
+docs/**/verification.json linguist-generated=true

@@ -1,0 +1,13 @@
+const test=require('node:test');
+const assert=require('node:assert/strict');
+const V=require('../dist/vision-core.js');
+const current={density:7.2,quantity:1,basis:'毛坯尺寸'};
+const ring=()=>({name:'标准圆环',basis:'毛坯尺寸',units:'mm',complete:true,missing:[],warnings:[],summary:'',segments:[{name:'圆环',op:'add',z:0,h:40,D0:100,D1:100,d0:60,d1:60,evidence:'图纸 OD100 ID60 H40'}],corrections:[]});
+test('AI 只提供几何，重量由解析公式计算',()=>{const d=ring();d.weight=999;const r=V.review(d,current);assert.equal(r.ready,true);assert.ok(Math.abs(r.result.weight-Math.PI/4*(100**2-60**2)*40*7.2/1e6)<1e-10);assert.equal(r.model.weight,undefined);});
+test('未知尺寸不转换为零，不显示整件重量',()=>{const d=ring();d.segments[0].d0=null;const r=V.review(d,current);assert.equal(r.ready,false);assert.equal(r.result,null);});
+test('部分结构或未解决问题不能载入为完整估重',()=>{for(const change of [{complete:false},{missing:['缺3根筋厚度']}]){const r=V.review({...ring(),...change},current);assert.equal(r.ready,false);assert.equal(r.result,null);}});
+test('计算口径改变后不能复用旧识别结果',()=>assert.equal(V.review(ring(),{...current,basis:'加工后尺寸'}).ready,false));
+test('内径大于外径的图纸误读被拒绝',()=>{const d=ring();d.segments[0].d0=162;assert.equal(V.review(d,current).ready,false);});
+test('密度和数量变化重新计算且不接受AI密度覆盖',()=>{const d=ring();d.density=100;const r=V.review(d,{...current,density:7.1,quantity:3});assert.equal(r.model.density,7.1);assert.equal(r.result.total,r.result.weight*3);});
+test('局部筋板按净体积计重，无用的null字段不进入计算',()=>{const d=ring();d.corrections=[{name:'三角筋',type:'triangle',op:'add',count:3,a:20,b:10,c:5,d:null,evidence:'标注20x10x5，三根'}];const r=V.review(d,current);assert.equal(r.ready,true);assert.equal(r.result.added,1500);});
+test('没有尺寸依据的模型不自动计重',()=>{const d=ring();d.segments[0].evidence='';assert.equal(V.review(d,current).ready,false);});

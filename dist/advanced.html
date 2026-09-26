@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#142b35"><meta name="description" content="电机壳体通用估重工具，支持回转体、散热筋、底脚、孔槽、图纸尺寸识别和截面描点。"><title>铸衡 · 电机铸件通用估重</title><link rel="stylesheet" href="style.css"><script defer src="engine.js"></script><script defer src="drawing-core.js"></script><script defer src="app.js"></script><script defer src="drawing.js"></script><script defer src="vision-core.js"></script><script defer src="vision.js"></script><script defer src="cad-core.js"></script><script defer src="cad.js"></script><script defer src="project.js"></script></head>
+<body>
+<div style="padding:12px 28px;background:#f5f5f1;color:#344e40;font-size:14px"><a href="index.html" style="color:inherit">← 返回简易三维估重</a></div>
+<header class="masthead"><a class="brand" href="./"><svg viewBox="0 0 36 36" aria-hidden="true"><path d="M18 3 32 11v14l-14 8L4 25V11Z M4 11l14 8 14-8M18 19v14"/><ellipse cx="18" cy="11" rx="6" ry="3"/></svg><span>铸衡<small>铸件重量计算</small></span></a><span class="header-note">回转体 · 灰铸铁</span><button class="quiet light" id="helpBtn">计算说明 <span aria-hidden="true">↗</span></button></header>
+<main>
+<div class="page-heading"><div><div class="eyebrow">MOTOR CASTING WORKBENCH</div><h1>电机铸件通用估重</h1></div><div class="unit-tag">尺寸 mm <span>/</span> 重量 kg</div></div>
+<section class="cad-panel panel" aria-labelledby="cadTitle">
+<div class="cad-heading"><div><div class="eyebrow">LOCAL CAD · 本地图纸</div><h2 id="cadTitle">从原始图纸计算</h2><p>选材料剖面，指定旋转轴。筋板、底脚、接线盒用选区拉伸补充。</p></div><span id="cadAvailability" class="unit-tag">检查 CAD 服务…</span></div>
+<div class="cad-entry"><label class="upload-button">导入 DWG / DXF<input id="cadFile" type="file" accept=".dwg,.dxf,.exb"></label><button id="cadDemo">体验剖面示例</button><button id="cadLibraryRefresh">读取 kakku’s disk 图纸库</button><span class="muted">原图只读 · 本机处理</span></div>
+<details class="cad-library" id="cadLibrary"><summary>Y2 / YE4 铸件及加工对照图 <span id="cadLibraryCount"></span></summary><p id="cadLibraryNote" class="assistant-help"></p><div class="cad-filters"><select id="cadSeries" aria-label="系列"><option value="">全部系列</option></select><select id="cadKind" aria-label="零件类别"><option value="">全部类别</option></select><select id="cadFrame" aria-label="机座号"><option value="">全部机座号</option></select><input id="cadSearch" type="search" placeholder="搜索名称、机座号或路径" aria-label="搜索图纸"></div><div id="cadLibraryList"></div></details>
+<p id="cadStatus" role="status" class="assistant-help">支持二维闭合剖面；原图的毛坯和加工轮廓须分别核对。</p>
+<div id="cadWorkspace" hidden>
+<div class="cad-file-heading"><strong id="cadFilename"></strong><span id="cadMeta"></span></div><p id="cadGuide" class="cad-guide"></p>
+<div class="cad-workspace"><div class="cad-stage"><div class="cad-toolbar"><button id="cadSelect" class="active">选材料</button><button id="cadAxisLine">点选轴线</button><button id="cadAxisPoints">两点定轴</button><button id="cadCalibrate">两点标定</button><button id="cadFit">全图</button><button id="cadZoomSelection">放大选区</button><button id="cadClear">清空选区</button></div><canvas id="cadCanvas" tabindex="0" aria-label="CAD 材料选区画布，滚轮缩放，拖动平移"></canvas><p class="cad-canvas-hint" id="cadCanvasHint">滚轮缩放 · 拖动平移 · 单击选取闭合区域 · Alt + 单击切换重叠区域</p></div>
+<div class="cad-controls"><label>计算方式<select id="cadMode"><option value="revolve">剖面绕轴旋转 360°</option><option value="extrude">选区面积 × 净厚度</option></select></label>
+<div class="cad-control-grid"><label>每图形单位 = mm<input id="cadScale" type="number" min="0.000001" step="any" placeholder="未指定，需标定"></label><label>标定实际长度 mm<input id="cadKnownLength" type="number" min="0.000001" step="any" value="100"></label></div><p class="assistant-help" id="cadScaleHint">图签的 1:2 不等于几何单位，请用已知长度核对。</p>
+<div id="cadRevolveControls"><p id="cadAxisStatus" class="assistant-help">旋转轴未设置</p><button id="cadFlipSide">切换轴线计算侧</button></div>
+<div id="cadExtrudeControls" hidden class="cad-control-grid"><label>净厚度 mm<input id="cadThickness" type="number" min="0.000001" step="any" value="8"></label><label>重复数量<input id="cadCount" type="number" min="1" step="1" value="1"></label></div>
+<label>图中所选轮廓<select id="cadBasis"><option value="">请选择计算口径</option><option value="毛坯尺寸">毛坯轮廓</option><option value="加工后尺寸">加工后轮廓</option></select></label>
+<p id="cadSelection" class="assistant-help">尚未选择材料区域</p><label class="confirm-label"><input id="cadConfirm" type="checkbox">已核对材料为灰铸铁、比例和选区；仅选同一剖面的净材料</label>
+<button class="primary" id="cadCalculate">计算所选结构</button><div id="cadResult" hidden><div class="cad-result-number"><small>所选结构估重</small><strong id="cadWeight"></strong><span id="cadVolume"></span></div><p id="cadResultHint" class="assistant-help"></p><label>结构名称<input id="cadPartName" maxlength="60" value="CAD 主体"></label><label>追加时增减<select id="cadOperation"><option value="add">增加净材料</option><option value="cut">扣除孔槽净体积</option></select></label><div class="cad-result-actions"><button id="cadApply" class="primary">以此新建模型</button><button id="cadAppend">追加为局部结构</button></div></div>
+</div></div><details id="cadWarnings"><summary>图纸读取说明与待核对项</summary><ul id="cadWarningList"></ul><p>只选择一个视图中的材料。剖面中的空白可能是孔、筋板或未剖部分；闭合轮廓不能自动证明它是材料。局部结构追加按净体积增减，不自动扣除与主体的重叠。</p></details>
+</div><div id="cadError" class="inline-error" role="alert" hidden></div></section>
+<details class="drawing-assistant panel" id="drawingAssistant">
+<summary><span>AI 识图估重与截面描点</span><span class="assistant-status" id="ocrAvailability">检查本机识别服务…</span></summary>
+<div class="drawing-intro"><p>导入带尺寸的图纸，由本机 AI 提取回转段、筋、底脚和孔槽，自动计算草稿重量。缺失尺寸可补充说明后重试，也可手动输入或描点。图纸不上传外网。</p><label class="upload-button">选择图纸图片<input id="drawingFile" type="file" accept="image/png,image/jpeg,image/webp,image/bmp,image/tiff"></label><span class="muted">PNG / JPG / WebP · ≤ 15 MB · 支持粘贴图片</span></div>
+<div class="drawing-workspace" id="drawingWorkspace" hidden>
+<div class="drawing-stage"><div class="drawing-toolbar"><button id="runOCR">识别尺寸标注</button><button id="rotateDrawing">旋转 90°</button><button id="clearDrawing">移除图片</button><label>放大<select id="drawingZoom"><option value="1">1×</option><option value="2">2×</option><option value="3">3×</option><option value="4">4×</option></select></label></div><div class="drawing-scroll"><canvas id="drawingCanvas" aria-label="图纸标注和轮廓描点画布" tabindex="0"></canvas></div><p id="drawingStatus" role="status">图纸已加载。</p></div>
+<div class="drawing-controls"><div class="assistant-tabs"><button data-assistant-view="vision" class="active">AI 自动建模</button><button data-assistant-view="dimensions">OCR 尺寸</button><button data-assistant-view="trace">截面描点</button></div>
+<div id="visionAssistant">
+<div class="vision-badge">本机免费识图 <span id="visionAvailability">检查视觉模型…</span></div>
+<p class="assistant-help">识图采用下方选择的毛坯 / 加工后口径；括号外为毛坯，括号内为加工后。重量由几何公式计算，AI 负责提取结构和尺寸。</p>
+<label class="full-label">补充尺寸或纠正识别 <span class="muted">选填</span><textarea id="visionNotes" maxlength="3000" rows="3" placeholder="例如：这是毛坯端盖；3 条筋均布，筋厚 5 mm；忽略 R2 铸造圆角。缺少尺寸请先查图纸，不要猜测。"></textarea></label>
+<div class="assistant-actions"><button id="runVision" class="primary">AI 识别并计算</button><button id="refreshVision">检查模型连接</button></div>
+<p id="visionProgress" class="assistant-help" role="status">使用本机 Qwen 视觉模型，无需 API 密钥。首次识别需加载模型，请稍候。</p>
+<div id="visionError" class="inline-error" role="alert" hidden></div>
+<div id="visionResult" hidden><div class="vision-estimate"><span id="visionResultLabel">AI 草稿估重 · 待核对</span><strong id="visionWeight">—</strong><small id="visionMetric"></small></div>
+<p id="visionSummary" class="assistant-help"></p><div id="visionIssues"></div>
+<details class="vision-geometry" open><summary>识别结构与尺寸依据</summary><div id="visionGeometry"></div></details>
+<button id="applyVision" class="primary" disabled>载入草稿并编辑</button><p id="visionApplyHint" class="assistant-help">载入将替换下方的当前模型。请对照原图核对 AI 草稿。</p></div>
+</div>
+<div id="dimensionAssistant" hidden><p class="assistant-help">识别结果是候选尺寸，不会直接改动当前模型。括号外按毛坯、括号内按加工后读取。橙色候选为低置信度或符号不确定，须核对原图。</p><label class="candidate-destination">点击候选填入<select id="candidateTarget"><option value="mapD">外径 D</option><option value="mapd">内径 d</option><option value="mapH">高度 H</option><option value="mapZ">起点 Z</option></select></label><div id="ocrCandidates" class="ocr-candidates"></div><label class="full-label">修正 / 粘贴识别文字<textarea id="ocrText" rows="3" placeholder="例如：外径 φ220，内径 φ190，总长 220"></textarea></label><button id="parseDimensions">解析这段文字</button>
+<h3>建立一个圆柱 / 圆环段</h3><p class="assistant-help">外径、内径和长度须属于同一段。仅有直径序列时不猜测关联关系。</p><div class="mapping-grid"><label>外径 D<input id="mapD" type="number" min="0" step="any" list="dimensionValues"></label><label>内径 d<input id="mapd" type="number" min="0" step="any" list="dimensionValues" placeholder="实心填 0"></label><label>高度 H<input id="mapH" type="number" min="0" step="any" list="dimensionValues"></label><label>起点 Z<input id="mapZ" type="number" min="0" step="any" value="0"></label></div><datalist id="dimensionValues"></datalist><label class="confirm-label"><input type="checkbox" id="confirmDimensions">已核对以上尺寸及毛坯 / 加工后口径</label><div class="assistant-actions"><button class="primary" id="applyDimensions">用此段新建模型</button><button id="appendDimensions">追加到当前模型</button></div><p class="assistant-help">新建将清除当前示例及局部结构；追加会保留当前模型。</p></div>
+<div id="traceAssistant" hidden><p class="assistant-help">适合无透视变形的正投影剖面图。照片先尽量摆正；描点精度受图片比例与选点影响。</p><ol class="trace-steps"><li><button id="calibrateTrace">标定比例：点击已知尺寸两端</button><label>该距离 mm<input id="traceLength" type="number" min="0" step="any" value="100"></label><span id="scaleStatus">未标定</span></li><li><button id="axisTrace">设旋转轴：沿 Z 正向点两点</button><span id="axisStatus">未设置</span></li><li><button id="outlineTrace">描材料边界：依次点击顶点</button><span>只描旋转轴一侧的一块闭合材料区域；结束后自动闭合。</span></li></ol><div class="assistant-actions"><button id="undoTrace">撤销一点</button><button id="resetTrace">清空轮廓</button></div><p id="traceStatus" class="assistant-help">尚未描点</p><label class="confirm-label"><input type="checkbox" id="confirmTrace">已核对比例、旋转轴和闭合材料区域</label><div class="assistant-actions"><button class="primary" id="applyTrace">用此截面新建</button><button id="appendTrace">追加材料区域</button></div></div>
+</div></div><div id="drawingError" class="inline-error" role="alert" hidden></div>
+</details>
+<section class="settings panel" aria-label="基本设置">
+<label class="name-field">零件名称<input id="partName" value="带法兰端盖" maxlength="80"></label>
+<label>材质<div class="material">灰铸铁 <span>HT</span></div></label>
+<label>密度 <span class="muted">g/cm³</span><input id="density" type="number" value="7.2" min="0.01" max="30" step="0.01"></label>
+<label>计算口径<select id="dimensionBasis"><option value="毛坯尺寸">毛坯尺寸</option><option value="加工后尺寸">加工后尺寸</option></select></label>
+<label>数量 <span class="muted">件</span><input id="quantity" type="number" min="1" step="1" value="1"></label>
+</section>
+<div class="project-actions"><button id="saveProject">保存当前计算方案</button><label class="project-upload">载入计算方案<input id="loadProject" type="file" accept=".json,application/json"></label><span id="projectStatus" role="status">保存尺寸、密度和来源，方便同类零件复用。</span></div>
+<div class="workbench">
+<section class="editor panel" aria-labelledby="geometry-title">
+<div class="panel-heading"><div><span class="step">01</span><h2 id="geometry-title">回转截面</h2></div><span class="muted">沿轴线 Z 组合</span></div>
+<div class="presets" aria-label="形状模板"><button data-preset="motor" class="active">散热筋机座</button><button data-preset="annular">环筋机壳</button><button data-preset="bearing">轴承座端盖</button><button data-preset="bell">锥形端罩</button><button data-preset="ring">圆柱 / 圆环</button><button data-preset="cone">空心锥台</button><button data-preset="flange">阶梯法兰</button><button data-preset="cover">带法兰端盖</button></div>
+<p class="preset-note" id="presetNote">端盖示意模型，可修改尺寸；不是对参考照片的精确复原。</p>
+<div class="field-key"><span><i class="swatch material-swatch"></i>实体：旋转后保留</span><span><i class="swatch cut-swatch"></i>扣除：挖出内腔</span></div>
+<div id="segments"></div>
+<button class="add-segment" id="addSegment"><b>＋</b> 添加回转段</button>
+<div class="tip"><span>↳</span> Z 从同一端面起算。重叠实体自动合并；扣除只作用于实体内。</div>
+<details class="corrections" open><summary><span>局部结构与孔槽</span><span class="muted">14 类形状</span></summary><p>输入净增减尺寸：散热筋高度从筒体表面起算，底脚只计主体之外的材料。此处不自动做三维相交去重；孔深只填实际穿过材料的长度。</p><div class="feature-picker"><label for="featureType">形状</label><select id="featureType"></select><button id="addFeature">＋ 添加</button></div><div id="corrections"></div></details>
+<details class="custom-profile"><summary>自定义回转截面（坐标输入）</summary><p>依次输入旋转轴同一侧的材料边界点，每行“半径 r, 轴向 Z”，单位 mm。自动闭合；圆弧可用多个点近似。需要描图时用上方图纸助手。</p><textarea id="profilePoints" rows="5" aria-label="自定义截面坐标" placeholder="30, 0&#10;80, 0&#10;80, 20&#10;50, 20&#10;50, 60&#10;30, 60"></textarea><div class="assistant-actions"><select id="profileOp" aria-label="截面增减方式"><option value="add">增加材料</option><option value="cut">扣除内腔</option></select><button id="addProfile">追加截面</button></div><p id="profileError" class="inline-error" role="alert" hidden></p></details>
+</section>
+<aside class="preview-column">
+<section class="preview-panel" aria-label="几何预览"><div class="preview-toolbar"><span>几何预览</span><div class="view-tabs" role="group" aria-label="预览方式"><button data-view="3d" class="active" aria-pressed="true">三维</button><button data-view="section" aria-pressed="false">剖面</button></div><button id="resetView" class="quiet light" aria-label="复位视角">⟲</button></div><canvas id="viewport" aria-label="回转体几何示意图，可拖动旋转" role="img"></canvas><div class="preview-footer"><span id="viewHint">拖动旋转 · 滚轮缩放</span><span>仅显示回转主体</span></div></section>
+<section class="result panel" aria-live="polite" aria-atomic="true"><div class="result-label"><span>当前模型估重</span><span id="basisBadge">毛坯尺寸</span></div><div class="weight"><strong id="weight">—</strong><span>kg / 件</span></div><div class="result-sub"><div><span>净体积</span><b id="volume">—</b><small>cm³</small></div><div><span>合计重量</span><b id="total">—</b><small id="quantityLabel">kg · 1 件</small></div></div><div id="errors" role="alert" hidden></div><details class="breakdown"><summary>查看计算明细</summary><div id="breakdown"></div></details></section>
+<div class="calculation-note"><span class="note-mark">i</span><p><b id="sourceNote">手动参数 / 模板</b><br>三维图显示回转主体；局部筋、底脚、孔槽按明细计重。毛坯未铸出的加工孔不要提前扣除，浇冒口不计入零件重量。</p></div>
+</aside>
+</div>
+<details class="instructions panel" id="instructions"><summary>使用方法与计算依据</summary><div class="instructions-content"><div><h3>按图纸拆分截面</h3><p>从一个端面设 Z = 0，把零件拆为圆柱、圆环或锥台。每段输入起点 Z、高度 H、外径 D 和内径 d；锥台另填末端直径。圆环内径填 0 即为实心。</p><p>参考图括号外为毛坯尺寸，括号内为加工后尺寸。选择计算口径只是标记，切换后请手动替换对应尺寸；工具不会自动加加工余量。</p></div><div><h3>体积与密度</h3><p>圆环：V = πH(D² − d²) / 4。锥环：V = πH[(D₀² + D₀D₁ + D₁²) − (d₀² + d₀d₁ + d₁²)] / 12。计算前先合并重叠实体，再扣除内腔。</p><p>默认 7.20 g/cm³ 为灰铸铁的估算值，具体密度请按材质和实测值调整。<a href="https://www.dura-bar.com/resources/dura-bar-density" target="_blank" rel="noopener noreferrer">密度参考：Dura-Bar 技术资料</a>。不按 HT 牌号虚设固定密度。</p></div><div><h3>精度边界</h3><p>尺寸按输入值直接计算；轴对称直线截面按解析公式积分。描点轮廓按折线近似。局部形状可按公式增减，互相重叠时需自行扣除重复体积；它们不参与三维主体预览。结果为理论估重，不包含铸造缺陷或尺寸偏差。</p><p>本页模板均为演示尺寸。本地 AI 可提取结构和尺寸并生成估重草稿，但可能误读标注或结构；须核对原图。OCR 尺寸和描点可作为后备。无法从缺少壁厚、内腔和尺度的实物照片推算准确重量。</p></div></div></details>
+<footer><span>铸衡 <span class="footer-dot">/</span> 回转体理论重量计算</span><span>理论估重 · 输入尺寸即时计算</span></footer>
+</main>
+</body></html>

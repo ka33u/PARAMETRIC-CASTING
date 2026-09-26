@@ -1,0 +1,44 @@
+[
+  {
+    "name": "water-annular-unequal-flanges",
+    "family": "watercool",
+    "occt_mm3": 6104900.8042791,
+    "manifold_mm3": 6104391.61276923,
+    "relative_error": 8.340700794236886e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.461,
+    "water_occt_mm3": 4365746.966016639,
+    "water_manifold_mm3": 4365307.344531237,
+    "water_relative_error": 0.00010069788488062383,
+    "water_valid_solid": true
+  },
+  {
+    "name": "water-axial-unequal-flanges",
+    "family": "watercool",
+    "occt_mm3": 6339488.83357387,
+    "manifold_mm3": 6338967.583681562,
+    "relative_error": 8.22227005981685e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.753,
+    "water_occt_mm3": 4140446.466136566,
+    "water_manifold_mm3": 4140025.1045312374,
+    "water_relative_error": 0.00010176719075459477,
+    "water_valid_solid": true
+  },
+  {
+    "name": "water-rings-unequal-flanges",
+    "family": "watercool",
+    "occt_mm3": 6350078.947622975,
+    "manifold_mm3": 6349544.764066731,
+    "relative_error": 8.412234881657172e-05,
+    "valid_solid": true,
+    "passed": true,
+    "seconds": 0.602,
+    "water_occt_mm3": 4120569.373740553,
+    "water_manifold_mm3": 4120154.1932337363,
+    "water_relative_error": 0.0001007580431632701,
+    "water_valid_solid": true
+  }
+]

@@ -1,0 +1,1933 @@
+[
+  {
+    "name": "water-annular-unequal-flanges",
+    "family": "watercool",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "family": "watercool",
+      "variant": "annular",
+      "name": "水冷机座",
+      "values": {
+        "D": 300,
+        "bore": 230,
+        "L": 300,
+        "t": 8,
+        "outerT": 8
+      },
+      "features": {
+        "feet": true,
+        "flange": true,
+        "ports": 2,
+        "holes": true
+      },
+      "overrides": {
+        "flangeAWidth": 20,
+        "flangeBWidth": 35
+      },
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "difference",
+              "children": [
+                {
+                  "type": "cylinder",
+                  "r": 123,
+                  "r2": 123,
+                  "h": 300,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "cylinder",
+                  "r": 115,
+                  "r2": 115,
+                  "h": 302,
+                  "position": [
+                    0,
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "difference",
+              "children": [
+                {
+                  "type": "cylinder",
+                  "r": 150,
+                  "r2": 150,
+                  "h": 300,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "cylinder",
+                  "r": 142,
+                  "r2": 142,
+                  "h": 302,
+                  "position": [
+                    0,
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "difference",
+                  "children": [
+                    {
+                      "type": "cylinder",
+                      "r": 142.8,
+                      "r2": 142.8,
+                      "h": 12,
+                      "position": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "type": "cylinder",
+                      "r": 122.2,
+                      "r2": 122.2,
+                      "h": 14,
+                      "position": [
+                        0,
+                        0,
+                        -1
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "difference",
+                  "children": [
+                    {
+                      "type": "cylinder",
+                      "r": 142.8,
+                      "r2": 142.8,
+                      "h": 12,
+                      "position": [
+                        0,
+                        0,
+                        288
+                      ]
+                    },
+                    {
+                      "type": "cylinder",
+                      "r": 122.2,
+                      "r2": 122.2,
+                      "h": 14,
+                      "position": [
+                        0,
+                        0,
+                        287
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "difference",
+              "children": [
+                {
+                  "type": "union",
+                  "children": [
+                    {
+                      "type": "box",
+                      "size": [
+                        72,
+                        13.6,
+                        204
+                      ],
+                      "position": [
+                        -141,
+                        -171.1,
+                        48
+                      ]
+                    },
+                    {
+                      "type": "box",
+                      "size": [
+                        12,
+                        69,
+                        132.6
+                      ],
+                      "position": [
+                        -111,
+                        -157.5,
+                        83.7
+                      ]
+                    },
+                    {
+                      "type": "box",
+                      "size": [
+                        72,
+                        13.6,
+                        204
+                      ],
+                      "position": [
+                        69,
+                        -171.1,
+                        48
+                      ]
+                    },
+                    {
+                      "type": "box",
+                      "size": [
+                        12,
+                        69,
+                        132.6
+                      ],
+                      "position": [
+                        99,
+                        -157.5,
+                        83.7
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "cylinder",
+                  "r": 142,
+                  "r2": 142,
+                  "h": 302,
+                  "position": [
+                    0,
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "difference",
+              "children": [
+                {
+                  "type": "cylinder",
+                  "r": 171,
+                  "r2": 171,
+                  "h": 20,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "cylinder",
+                  "r": 142,
+                  "r2": 142,
+                  "h": 22,
+                  "position": [
+                    0,
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "difference",
+              "children": [
+                {
+                  "type": "cylinder",
+                  "r": 171,
+                  "r2": 171,
+                  "h": 35,
+                  "position": [
+                    0,
+                    0,
+                    265
+                  ]
+                },
+                {
+                  "type": "cylinder",
+                  "r": 142,
+                  "r2": 142,
+                  "h": 37,
+                  "position": [
+                    0,
+                    0,
+                    264
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "cylinder",
+                    "r": 19.5,
+                    "r2": 19.5,
+                    "h": 19.2,
+                    "position": [
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    90,
+                    90
+                  ],
+                  "translate": [
+                    8.988907505741573e-15,
+                    146.8,
+                    31.6
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "cylinder",
+                    "r": 19.5,
+                    "r2": 19.5,
+                    "h": 19.2,
+                    "position": [
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    90,
+                    90
+                  ],
+                  "translate": [
+                    8.988907505741573e-15,
+                    146.8,
+                    268.4
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 6.8,
+            "r2": 6.8,
+            "h": 15.6,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "translate": [
+            -105,
+            -156.5,
+            84.72
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 6.8,
+            "r2": 6.8,
+            "h": 15.6,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "translate": [
+            -105,
+            -156.5,
+            215.28
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 6.8,
+            "r2": 6.8,
+            "h": 15.6,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "translate": [
+            105,
+            -156.5,
+            84.72
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 6.8,
+            "r2": 6.8,
+            "h": 15.6,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "translate": [
+            105,
+            -156.5,
+            215.28
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 8.775,
+            "r2": 8.775,
+            "h": 34.5,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            0,
+            90,
+            90
+          ],
+          "translate": [
+            8.113285044351215e-15,
+            132.5,
+            31.6
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 8.775,
+            "r2": 8.775,
+            "h": 34.5,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            0,
+            90,
+            90
+          ],
+          "translate": [
+            8.113285044351215e-15,
+            132.5,
+            268.4
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 6104391.61276923,
+    "water_boundary": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "cylinder",
+          "r": 142,
+          "r2": 142,
+          "h": 276,
+          "position": [
+            0,
+            0,
+            12
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 123,
+          "r2": 123,
+          "h": 278,
+          "position": [
+            0,
+            0,
+            11
+          ]
+        }
+      ]
+    },
+    "water_volume": 4365307.344531237
+  },
+  {
+    "name": "water-axial-unequal-flanges",
+    "family": "watercool",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "family": "watercool",
+      "variant": "axial",
+      "name": "水冷机座",
+      "values": {
+        "D": 300,
+        "bore": 230,
+        "L": 300,
+        "t": 8,
+        "outerT": 8
+      },
+      "features": {
+        "feet": true,
+        "flange": true,
+        "ports": 2,
+        "holes": true
+      },
+      "overrides": {
+        "flangeAWidth": 20,
+        "flangeBWidth": 35
+      },
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "difference",
+              "children": [
+                {
+                  "type": "cylinder",
+                  "r": 123,
+                  "r2": 123,
+                  "h": 300,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "cylinder",
+                  "r": 115,
+                  "r2": 115,
+                  "h": 302,
+                  "position": [
+                    0,
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "difference",
+              "children": [
+                {
+                  "type": "cylinder",
+                  "r": 150,
+                  "r2": 150,
+                  "h": 300,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "cylinder",
+                  "r": 142,
+                  "r2": 142,
+                  "h": 302,
+                  "position": [
+                    0,
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "difference",
+                  "children": [
+                    {
+                      "type": "cylinder",
+                      "r": 142.8,
+                      "r2": 142.8,
+                      "h": 12,
+                      "position": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "type": "cylinder",
+                      "r": 122.2,
+                      "r2": 122.2,
+                      "h": 14,
+                      "position": [
+                        0,
+                        0,
+                        -1
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "difference",
+                  "children": [
+                    {
+                      "type": "cylinder",
+                      "r": 142.8,
+                      "r2": 142.8,
+                      "h": 12,
+                      "position": [
+                        0,
+                        0,
+                        288
+                      ]
+                    },
+                    {
+                      "type": "cylinder",
+                      "r": 122.2,
+                      "r2": 122.2,
+                      "h": 14,
+                      "position": [
+                        0,
+                        0,
+                        287
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "box",
+                    "size": [
+                      22.200000000000003,
+                      6,
+                      276
+                    ],
+                    "position": [
+                      121.4,
+                      -3,
+                      12
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    90
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "box",
+                    "size": [
+                      22.200000000000003,
+                      6,
+                      242.88
+                    ],
+                    "position": [
+                      121.4,
+                      -3,
+                      12
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    135
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "box",
+                    "size": [
+                      22.200000000000003,
+                      6,
+                      242.88
+                    ],
+                    "position": [
+                      121.4,
+                      -3,
+                      45.12
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    180
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "box",
+                    "size": [
+                      22.200000000000003,
+                      6,
+                      242.88
+                    ],
+                    "position": [
+                      121.4,
+                      -3,
+                      12
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    225
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "box",
+                    "size": [
+                      22.200000000000003,
+                      6,
+                      242.88
+                    ],
+                    "position": [
+                      121.4,
+                      -3,
+                      45.12
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    270
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "box",
+                    "size": [
+                      22.200000000000003,
+                      6,
+                      242.88
+                    ],
+                    "position": [
+                      121.4,
+                      -3,
+                      12
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    315
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "box",
+                    "size": [
+                      22.200000000000003,
+                      6,
+                      242.88
+                    ],
+                    "position": [
+                      121.4,
+                      -3,
+                      45.12
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    360
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "box",
+                    "size": [
+                      22.200000000000003,
+                      6,
+                      242.88
+                    ],
+                    "position": [
+                      121.4,
+                      -3,
+                      12
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    0,
+                    405
+                  ],
+                  "translate": [
+                    0,
+                    0,
+                    0
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "difference",
+              "children": [
+                {
+                  "type": "union",
+                  "children": [
+                    {
+                      "type": "box",
+                      "size": [
+                        72,
+                        13.6,
+                        204
+                      ],
+                      "position": [
+                        -141,
+                        -171.1,
+                        48
+                      ]
+                    },
+                    {
+                      "type": "box",
+                      "size": [
+                        12,
+                        69,
+                        132.6
+                      ],
+                      "position": [
+                        -111,
+                        -157.5,
+                        83.7
+                      ]
+                    },
+                    {
+                      "type": "box",
+                      "size": [
+                        72,
+                        13.6,
+                        204
+                      ],
+                      "position": [
+                        69,
+                        -171.1,
+                        48
+                      ]
+                    },
+                    {
+                      "type": "box",
+                      "size": [
+                        12,
+                        69,
+                        132.6
+                      ],
+                      "position": [
+                        99,
+                        -157.5,
+                        83.7
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "cylinder",
+                  "r": 142,
+                  "r2": 142,
+                  "h": 302,
+                  "position": [
+                    0,
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "difference",
+              "children": [
+                {
+                  "type": "cylinder",
+                  "r": 171,
+                  "r2": 171,
+                  "h": 20,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "cylinder",
+                  "r": 142,
+                  "r2": 142,
+                  "h": 22,
+                  "position": [
+                    0,
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "difference",
+              "children": [
+                {
+                  "type": "cylinder",
+                  "r": 171,
+                  "r2": 171,
+                  "h": 35,
+                  "position": [
+                    0,
+                    0,
+                    265
+                  ]
+                },
+                {
+                  "type": "cylinder",
+                  "r": 142,
+                  "r2": 142,
+                  "h": 37,
+                  "position": [
+                    0,
+                    0,
+                    264
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "cylinder",
+                    "r": 19.5,
+                    "r2": 19.5,
+                    "h": 19.2,
+                    "position": [
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    90,
+                    112.5
+                  ],
+                  "translate": [
+                    -56.17792787119517,
+                    135.6255153726569,
+                    31.6
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "cylinder",
+                    "r": 19.5,
+                    "r2": 19.5,
+                    "h": 19.2,
+                    "position": [
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    90,
+                    67.5
+                  ],
+                  "translate": [
+                    56.177927871195195,
+                    135.6255153726569,
+                    31.6
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 6.8,
+            "r2": 6.8,
+            "h": 15.6,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "translate": [
+            -105,
+            -156.5,
+            84.72
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 6.8,
+            "r2": 6.8,
+            "h": 15.6,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "translate": [
+            -105,
+            -156.5,
+            215.28
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 6.8,
+            "r2": 6.8,
+            "h": 15.6,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "translate": [
+            105,
+            -156.5,
+            84.72
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 6.8,
+            "r2": 6.8,
+            "h": 15.6,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "translate": [
+            105,
+            -156.5,
+            215.28
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 8.775,
+            "r2": 8.775,
+            "h": 34.5,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            0,
+            90,
+            112.5
+          ],
+          "translate": [
+            -50.705554788374386,
+            122.41403805774549,
+            31.6
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 8.775,
+            "r2": 8.775,
+            "h": 34.5,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            0,
+            90,
+            67.5
+          ],
+          "translate": [
+            50.70555478837441,
+            122.41403805774549,
+            31.6
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 6338967.583681562,
+    "water_boundary": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "cylinder",
+          "r": 142,
+          "r2": 142,
+          "h": 276,
+          "position": [
+            0,
+            0,
+            12
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 123,
+          "r2": 123,
+          "h": 278,
+          "position": [
+            0,
+            0,
+            11
+          ]
+        }
+      ]
+    },
+    "water_volume": 4140025.1045312374
+  },
+  {
+    "name": "water-rings-unequal-flanges",
+    "family": "watercool",
+    "state": {
+      "format": "casting-parametric",
+      "version": 1,
+      "family": "watercool",
+      "variant": "rings",
+      "name": "水冷机座",
+      "values": {
+        "D": 300,
+        "bore": 230,
+        "L": 300,
+        "t": 8,
+        "outerT": 8
+      },
+      "features": {
+        "feet": true,
+        "flange": true,
+        "ports": 2,
+        "holes": true
+      },
+      "overrides": {
+        "flangeAWidth": 20,
+        "flangeBWidth": 35
+      },
+      "edited": [],
+      "density": 7.2,
+      "quantity": 1,
+      "basis": "毛坯尺寸"
+    },
+    "tree": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "union",
+          "children": [
+            {
+              "type": "difference",
+              "children": [
+                {
+                  "type": "cylinder",
+                  "r": 123,
+                  "r2": 123,
+                  "h": 300,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "cylinder",
+                  "r": 115,
+                  "r2": 115,
+                  "h": 302,
+                  "position": [
+                    0,
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "difference",
+              "children": [
+                {
+                  "type": "cylinder",
+                  "r": 150,
+                  "r2": 150,
+                  "h": 300,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "cylinder",
+                  "r": 142,
+                  "r2": 142,
+                  "h": 302,
+                  "position": [
+                    0,
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "difference",
+                  "children": [
+                    {
+                      "type": "cylinder",
+                      "r": 142.8,
+                      "r2": 142.8,
+                      "h": 12,
+                      "position": [
+                        0,
+                        0,
+                        0
+                      ]
+                    },
+                    {
+                      "type": "cylinder",
+                      "r": 122.2,
+                      "r2": 122.2,
+                      "h": 14,
+                      "position": [
+                        0,
+                        0,
+                        -1
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "difference",
+                  "children": [
+                    {
+                      "type": "cylinder",
+                      "r": 142.8,
+                      "r2": 142.8,
+                      "h": 12,
+                      "position": [
+                        0,
+                        0,
+                        288
+                      ]
+                    },
+                    {
+                      "type": "cylinder",
+                      "r": 122.2,
+                      "r2": 122.2,
+                      "h": 14,
+                      "position": [
+                        0,
+                        0,
+                        287
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "difference",
+                  "children": [
+                    {
+                      "type": "difference",
+                      "children": [
+                        {
+                          "type": "cylinder",
+                          "r": 143.6,
+                          "r2": 143.6,
+                          "h": 6,
+                          "position": [
+                            0,
+                            0,
+                            78
+                          ]
+                        },
+                        {
+                          "type": "cylinder",
+                          "r": 121.4,
+                          "r2": 121.4,
+                          "h": 8,
+                          "position": [
+                            0,
+                            0,
+                            77
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "transform",
+                      "body": {
+                        "type": "prism",
+                        "points": [
+                          [
+                            0,
+                            0
+                          ],
+                          [
+                            126.78547852220983,
+                            271.89233611099496
+                          ],
+                          [
+                            -126.7854785222098,
+                            271.892336110995
+                          ]
+                        ],
+                        "h": 8
+                      },
+                      "rotate": [
+                        0,
+                        0,
+                        0
+                      ],
+                      "translate": [
+                        0,
+                        0,
+                        77
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "difference",
+                  "children": [
+                    {
+                      "type": "difference",
+                      "children": [
+                        {
+                          "type": "cylinder",
+                          "r": 143.6,
+                          "r2": 143.6,
+                          "h": 6,
+                          "position": [
+                            0,
+                            0,
+                            147
+                          ]
+                        },
+                        {
+                          "type": "cylinder",
+                          "r": 121.4,
+                          "r2": 121.4,
+                          "h": 8,
+                          "position": [
+                            0,
+                            0,
+                            146
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "transform",
+                      "body": {
+                        "type": "prism",
+                        "points": [
+                          [
+                            0,
+                            0
+                          ],
+                          [
+                            -126.78547852220998,
+                            -271.8923361109949
+                          ],
+                          [
+                            126.78547852220989,
+                            -271.89233611099496
+                          ]
+                        ],
+                        "h": 8
+                      },
+                      "rotate": [
+                        0,
+                        0,
+                        0
+                      ],
+                      "translate": [
+                        0,
+                        0,
+                        146
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "difference",
+                  "children": [
+                    {
+                      "type": "difference",
+                      "children": [
+                        {
+                          "type": "cylinder",
+                          "r": 143.6,
+                          "r2": 143.6,
+                          "h": 6,
+                          "position": [
+                            0,
+                            0,
+                            216
+                          ]
+                        },
+                        {
+                          "type": "cylinder",
+                          "r": 121.4,
+                          "r2": 121.4,
+                          "h": 8,
+                          "position": [
+                            0,
+                            0,
+                            215
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "transform",
+                      "body": {
+                        "type": "prism",
+                        "points": [
+                          [
+                            0,
+                            0
+                          ],
+                          [
+                            126.78547852220983,
+                            271.89233611099496
+                          ],
+                          [
+                            -126.7854785222098,
+                            271.892336110995
+                          ]
+                        ],
+                        "h": 8
+                      },
+                      "rotate": [
+                        0,
+                        0,
+                        0
+                      ],
+                      "translate": [
+                        0,
+                        0,
+                        215
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "difference",
+              "children": [
+                {
+                  "type": "union",
+                  "children": [
+                    {
+                      "type": "box",
+                      "size": [
+                        72,
+                        13.6,
+                        204
+                      ],
+                      "position": [
+                        -141,
+                        -171.1,
+                        48
+                      ]
+                    },
+                    {
+                      "type": "box",
+                      "size": [
+                        12,
+                        69,
+                        132.6
+                      ],
+                      "position": [
+                        -111,
+                        -157.5,
+                        83.7
+                      ]
+                    },
+                    {
+                      "type": "box",
+                      "size": [
+                        72,
+                        13.6,
+                        204
+                      ],
+                      "position": [
+                        69,
+                        -171.1,
+                        48
+                      ]
+                    },
+                    {
+                      "type": "box",
+                      "size": [
+                        12,
+                        69,
+                        132.6
+                      ],
+                      "position": [
+                        99,
+                        -157.5,
+                        83.7
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "cylinder",
+                  "r": 142,
+                  "r2": 142,
+                  "h": 302,
+                  "position": [
+                    0,
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "difference",
+              "children": [
+                {
+                  "type": "cylinder",
+                  "r": 171,
+                  "r2": 171,
+                  "h": 20,
+                  "position": [
+                    0,
+                    0,
+                    0
+                  ]
+                },
+                {
+                  "type": "cylinder",
+                  "r": 142,
+                  "r2": 142,
+                  "h": 22,
+                  "position": [
+                    0,
+                    0,
+                    -1
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "difference",
+              "children": [
+                {
+                  "type": "cylinder",
+                  "r": 171,
+                  "r2": 171,
+                  "h": 35,
+                  "position": [
+                    0,
+                    0,
+                    265
+                  ]
+                },
+                {
+                  "type": "cylinder",
+                  "r": 142,
+                  "r2": 142,
+                  "h": 37,
+                  "position": [
+                    0,
+                    0,
+                    264
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "union",
+              "children": [
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "cylinder",
+                    "r": 19.5,
+                    "r2": 19.5,
+                    "h": 19.2,
+                    "position": [
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    90,
+                    90
+                  ],
+                  "translate": [
+                    8.988907505741573e-15,
+                    146.8,
+                    31.6
+                  ]
+                },
+                {
+                  "type": "transform",
+                  "body": {
+                    "type": "cylinder",
+                    "r": 19.5,
+                    "r2": 19.5,
+                    "h": 19.2,
+                    "position": [
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  "rotate": [
+                    0,
+                    90,
+                    90
+                  ],
+                  "translate": [
+                    8.988907505741573e-15,
+                    146.8,
+                    268.4
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 6.8,
+            "r2": 6.8,
+            "h": 15.6,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "translate": [
+            -105,
+            -156.5,
+            84.72
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 6.8,
+            "r2": 6.8,
+            "h": 15.6,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "translate": [
+            -105,
+            -156.5,
+            215.28
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 6.8,
+            "r2": 6.8,
+            "h": 15.6,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "translate": [
+            105,
+            -156.5,
+            84.72
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 6.8,
+            "r2": 6.8,
+            "h": 15.6,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            90,
+            0,
+            0
+          ],
+          "translate": [
+            105,
+            -156.5,
+            215.28
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 8.775,
+            "r2": 8.775,
+            "h": 34.5,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            0,
+            90,
+            90
+          ],
+          "translate": [
+            8.113285044351215e-15,
+            132.5,
+            31.6
+          ]
+        },
+        {
+          "type": "transform",
+          "body": {
+            "type": "cylinder",
+            "r": 8.775,
+            "r2": 8.775,
+            "h": 34.5,
+            "position": [
+              0,
+              0,
+              0
+            ]
+          },
+          "rotate": [
+            0,
+            90,
+            90
+          ],
+          "translate": [
+            8.113285044351215e-15,
+            132.5,
+            268.4
+          ]
+        }
+      ]
+    },
+    "manifold_volume": 6349544.764066731,
+    "water_boundary": {
+      "type": "difference",
+      "children": [
+        {
+          "type": "cylinder",
+          "r": 142,
+          "r2": 142,
+          "h": 276,
+          "position": [
+            0,
+            0,
+            12
+          ]
+        },
+        {
+          "type": "cylinder",
+          "r": 123,
+          "r2": 123,
+          "h": 278,
+          "position": [
+            0,
+            0,
+            11
+          ]
+        }
+      ]
+    },
+    "water_volume": 4120154.1932337363
+  }
+]
